@@ -1,0 +1,207 @@
+@charset "utf-8";
+@import "helpers";
+
+html, body { margin: 0; padding: 0; }
+body {
+  background-attachment: fixed;
+  font-family: "Alef", sans-serif;
+}
+
+h2 { box-shadow: 0 -1px 1px #ddd; }
+
+figure {
+  display: inline-block;
+  position: relative;
+
+  figurecaption {
+    display: block;
+    font-size: smaller;
+    opacity: 0.8;
+  }
+}
+
+img { max-width: 100%; }
+
+table {
+  th, td {
+    border: 1px solid gray;
+  }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  margin: 0 auto;
+  padding: $grid;
+  position: relative;
+  width: $grid * 32;
+
+  .global_nav {
+    @include navigation(rgba(255, 180, 100, 0.8), rgba(255, 120, 230, 1.0));
+  }
+}
+
+.lang {
+  font-size: smaller;
+  margin-bottom: 2px;
+  position: relative;
+}
+
+.breadcrumb {
+  @include menulink;
+  color: gray;
+  font-size: smaller;
+}
+
+@-webkit-keyframes animateLogo {
+    0% { -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+  100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+}
+@keyframes animateLogo {
+    0% { -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+  100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+}
+
+.header {
+  $logosize: 112px;
+  background: rgba(255, 153, 153, 0.4);
+  background-image: url("../images/backgrounds/chidori_circle_2.jpg");
+  border-radius: 8px;
+  height: $logosize + 24;
+  position: relative;
+
+  h1 {
+    font-size: xx-large;
+    line-height: $logosize;
+    margin: 0;
+    position: relative;
+    text-align: center;
+
+    small {
+      display: block;
+      font-size: small;
+      line-height: 1em;
+      margin: 0;
+      position: relative;
+      top: -1em;
+    }
+  }
+
+  .logo {
+    -webkit-animation: animateLogo 0.5s ease-in-out 0s 1 normal;
+    animation: animateLogo 0.5s ease-in-out 0s 1 normal;
+    display: block;
+    height: $logosize;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    width: $logosize;
+    z-index: 1000;
+
+    &:hover, &:focus {
+      -webkit-transform: rotate(5deg);
+      transform: rotate(5deg);
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .tagline {
+    left: 0;
+    position: absolute;
+    top: $logosize;
+  }
+}
+
+.main {
+  overflow: hidden;
+
+  .local_nav {
+    @include navigation(rgba(0, 255, 200, 0.4), rgba(0, 255, 120, 0.8));
+  }
+}
+
+.aside {
+  float: left;
+  position: relative;
+  width: $grid * 8;
+
+  .news {
+    padding: 0;
+
+    li {
+      @include menulink;
+      display: block;
+    }
+  }
+
+  .facebook {
+    color: blue;
+    overflow: hidden;
+
+    img {
+      display: block;
+      float: left;
+      height: 32px;
+      width: 32px;
+    }
+
+    div {
+      border-radius: 0 2px 2px 0;
+      float: left;
+      height: 32px;
+      padding: 0 2px 0 0.5em;
+      -webkit-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
+
+      &:hover, &:focus {
+        background: rgb(59, 91, 153);
+        color: white;
+      }
+    }
+  }
+}
+
+
+.content {
+  background: rgba(255, 255, 255, 0.6);
+  float: right;
+  position: relative;
+  width: $grid * 24;
+
+  .share { text-align: right; }
+}
+
+.footer {
+  border-top: 1px solid gray;
+  clear: both;
+  color: gray;
+  font-size: smaller;
+  margin-top: $grid;
+  position: relative;
+  @include menulink_footer;
+
+  .menu {
+    overflow: hidden;
+
+    ul {
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: 25%;
+
+      li { display: block; }
+    }
+  }
+
+  .copyright {
+    clear: both;
+    text-align: center;
+    color: black;
+  }
+}

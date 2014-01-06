@@ -1,0 +1,6 @@
+.bundle/
+.sass-cache/
+node_modules/
+vendor/
+logs/
+Thumbs.db
