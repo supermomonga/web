@@ -18,9 +18,9 @@ title: ランの育て方
 
 ## アワチドリ/夢ちどり (Ponerorchis)<br /><small>Ponerorchis (ウチョウランの仲間) スモールランド</small>
 <figure style="float: right;">
-  <img src="/assets/images/pone01.jpg" alt="アワチドリ (Ponerorchis suzukiana) - Ranyuen" />
+  ![アワチドリ (Ponerorchis suzukiana) - Ranyuen](/assets/images/pone01.jpg)
   <figurecaption style="text-align: center;">↑アワチドリ/夢ちどり↓</figurecaption>
-  <img src="/assets/images/pone02.jpg" alt="夢ちどり (Hybrid of Ponerorchis suzukiana) - Ranyuen" />
+  ![夢ちどり (Hybrid of Ponerorchis suzukiana) - Ranyuen](/assets/images/pone02.jpg)
 </figure>
 
 属名のPonerorchis (ウチョウランの仲間) は、小さなランという意味です。

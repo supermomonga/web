@@ -10,13 +10,11 @@ title: エビネの種類
 
 ここでは春咲きエビネについて解説します。現在、一般的に栽培されているものは、
 
-<ol>
-  <li>ジエビネ       (<i>Cal.discolor</i>)</li>
-  <li>キエビネ       (<i>Cal.siebildii</i> あるいは <i>storiata</i>)</li>
-  <li>サルメンエビネ (<i>Cal.tricarinata</i>)</li>
-  <li>ニオイエビネ   (<i>Cal.izu-insularis</i>)</li>
-  <li>キリシマエビネ (<i>Cal.aristulifera</i>)</li>
-</ol>
+1. ジエビネ       (<i>Cal.discolor</i>)
+2. キエビネ       (<i>Cal.siebildii</i> あるいは <i>storiata</i>)
+3. サルメンエビネ (<i>Cal.tricarinata</i>)
+4. ニオイエビネ   (<i>Cal.izu-insularis</i>)
+5. キリシマエビネ (<i>Cal.aristulifera</i>)
 
 の5つの原種とこれらが自然交配することで生じた自然雑種 (ヒゼン系、ヒゴ系、コオズ系、サツマ系など)、あるいは5つの原種をもとに人工的に交配して生まれた種類 (<i>Cal.Hizen</i>、<i>Cal.Higo</i>、<i>Cal.Kozu</i>、<i>Cal.Satsuma</i>) などです。5種類の原種については多くの参考書に記されている通りですので、ここでは詳しい説明はしません。 (<i>cf.</i> [ジエビネについて](about_calanthe_discolor))
 
@@ -25,31 +23,27 @@ title: エビネの種類
 
 愛好家の間で使われている雑種群とその名称は以下の通りです。
 
-<ol>
-  <li>ヒゼン     (ヒゼン系)     = ジエビネとキリシマエビネが係わると推測される雑種群</li>
-  <li>ヒゴ       (ヒゴ系)       = キエビネとキリシマエビネが係わると推測される雑種群</li>
-  <li>サツマ     (サツマ系)     = ジエビネ、キエビネ、キリシマエビネの3種が係わると推測される雑種群</li>
-  <li>コオズ     (コオズ系)     = ジエビネとニオイエビネが係わると推測される雑種群</li>
-  <li>イシズチ   (イシズチ系)   = サルメンエビネとジエビネが係わると推測される雑種群</li>
-  <li>スイショウ (スイショウ系) = キリシマエビネとニオイエビネが係わると推測される雑種群</li>
-  <li>ミクラ     (ミクラ系)     = キリシマエビネ、ニオイエビネ、ジエビネの3種が係わると推測される雑種群</li>
-</ol>
+1. ヒゼン     (ヒゼン系)     = ジエビネとキリシマエビネが係わると推測される雑種群
+2. ヒゴ       (ヒゴ系)       = キエビネとキリシマエビネが係わると推測される雑種群
+3. サツマ     (サツマ系)     = ジエビネ、キエビネ、キリシマエビネの3種が係わると推測される雑種群
+4. コオズ     (コオズ系)     = ジエビネとニオイエビネが係わると推測される雑種群
+5. イシズチ   (イシズチ系)   = サルメンエビネとジエビネが係わると推測される雑種群
+6. スイショウ (スイショウ系) = キリシマエビネとニオイエビネが係わると推測される雑種群
+7. ミクラ     (ミクラ系)     = キリシマエビネ、ニオイエビネ、ジエビネの3種が係わると推測される雑種群
 
 これらはいずれも見た目によるものなので、交雑が何世代も進んだものでは間違われることもあり、多くの問題がありました。
 
 そこで、日本エビネ協会は、今後、健全な園芸種 (ラン) としてエビネが発展するには、世界の基準に合わせる必要があると考え、1996年から国際ラン登録局 (サンダースリスト Sander's List) への登録をはじめました。これによりシンビジュームやカトレアなどの洋ランと同様に原種から交配し、経緯が明らかな交配種に対し、交配種名 (グレッグス) が付けられるようになりました。世界的なラン展などで使われている正式なエビネの交配種名 (グレッグス) は以下の通りです。
 
-<ol>
-  <li><i>Cal.</i>Bicolor <i>Cal.(discolor×sieboldii)</i></li>
-  <li><i>Cal.</i>Hizen   <i>Cal.(discolor×aristulifera)</i></li>
-  <li><i>Cal.</i>Satsuma <i>Cal.(Bicolor×aristulifera)</i></li>
-  <li><i>Cal.</i>Kozu    <i>Cal.(discolor×izu-insularis)</i></li>
-  <li><i>Cal.</i>Inage   <i>Cal.(izu-insularis×Kozu)</i></li>
-  <li><i>Cal.</i>Anagawa <i>Cal.(discolor×Kozu)</i></li>
-  <li><i>Cal.</i>Kasuga  <i>Cal.(izu-insularis×Bicolor)</i></li>
-  <li><i>Cal.</i>Kokubu  <i>Cal.(discolor×Higo)</i></li>
-  <li><i>Cal.</i>Miyuki  <i>Cal.(Higo×Kozu)</i></li>
-</ol>
+1. <i>Cal.</i>Bicolor <i>Cal.(discolor×sieboldii)</i>
+2. <i>Cal.</i>Hizen   <i>Cal.(discolor×aristulifera)</i>
+3. <i>Cal.</i>Satsuma <i>Cal.(Bicolor×aristulifera)</i>
+4. <i>Cal.</i>Kozu    <i>Cal.(discolor×izu-insularis)</i>
+5. <i>Cal.</i>Inage   <i>Cal.(izu-insularis×Kozu)</i>
+6. <i>Cal.</i>Anagawa <i>Cal.(discolor×Kozu)</i>
+7. <i>Cal.</i>Kasuga  <i>Cal.(izu-insularis×Bicolor)</i>
+8. <i>Cal.</i>Kokubu  <i>Cal.(discolor×Higo)</i>
+9. <i>Cal.</i>Miyuki  <i>Cal.(Higo×Kozu)</i>
 
 他に約100の登録があります。
 

@@ -29,7 +29,7 @@ title: エビネの栽培法 - 初心者編
 <img src="/assets/images/tech_to_grow_calanthe_for_beginner.png" width="750" height="1080" alt="春色エビネ 年間管理の目安表 (Calanthe) - Ranyuen" />
 
 ## エビネの楽しみ方一例
-<img src="/assets/images/growings_bo2.jpg" alt="エビネ (EBINE) - Ranyuen" />
-<img src="/assets/images/growings_bo3.jpg" alt="エビネ (EBINE) - Ranyuen" />
-<img src="/assets/images/growings_bo4.jpg" alt="エビネ (EBINE) - Ranyuen" />
-<img src="/assets/images/growings_bo5.jpg" alt="エビネ (EBINE) - Ranyuen" />
+![エビネ (EBINE) - Ranyuen](/assets/images/growings_bo2.jpg)
+![エビネ (EBINE) - Ranyuen](/assets/images/growings_bo3.jpg)
+![エビネ (EBINE) - Ranyuen](/assets/images/growings_bo4.jpg)
+![エビネ (EBINE) - Ranyuen](/assets/images/growings_bo5.jpg)

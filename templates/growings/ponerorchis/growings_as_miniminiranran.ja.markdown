@@ -11,7 +11,7 @@ title: ミニミニランランの栽培
 信じられないという方も多いでしょう。ちなみにこのミニ鉢で5～10本程度の株立ちにまで育てることもできます。夢ちどり、アワチドリは小さな鉢が大好きです。
 
 ## ミニミニランランの育て方
-<img src="/assets/images/growings_sc1.jpg" alt="アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen" />
+![アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen](/assets/images/growings_sc1.jpg)
 
 開花中は室内の窓辺やテーブルの上などで楽しめます。花は涼しい場所に置くと長くもち、暑いところでは早めに終わります。また、つぼみのうちに暗い場所や涼しい場所へ長い間置くと開花時にきれいに発色せず、ぼけた色に咲くことがありますので注意してください。
 
@@ -20,7 +20,7 @@ title: ミニミニランランの栽培
 このようにテーブルの上でも、楽しめるようにと改良したものが、ミニミニランラン夢ちどりです。
 
 ## 水やり
-<img src="/assets/images/growings_sc2.jpg" alt="アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen" />
+![アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen](/assets/images/growings_sc2.jpg)
 
 土の表面が乾いたらたっぷりと与えます。室内ではコップとスプーンを使用すると簡単です。一回の適量はスプーン (大) 3杯程度が目安です。
 
@@ -48,6 +48,6 @@ title: ミニミニランランの栽培
 詳しくは[病害虫の防除](growings_controlling_pests_of_Ponerorchis)を参照してください。
 
 ## その他の注意点
-<img src="/assets/images/growings_IMG_2136.jpg" alt="アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen" />
+![アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen](/assets/images/growings_IMG_2136.jpg)
 
 来年も立派に咲かせるには、特に夏期の管理が重要です。なるべく涼しい場所に置き極度の乾燥や加湿にも注意します。

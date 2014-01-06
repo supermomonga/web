@@ -2,7 +2,7 @@
 title: 水やりの基本
 ---
 ## ウチョウラン Ponerorchis の仲間 水のやり方<br /><small>葉の生長と根の伸長に合わせた水やりの方法 (理想の水やり法)</small>
-<img src="/assets/images/growings_miniminiranran_mizuyari.png" alt="アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen" />
+![アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen](/assets/images/growings_miniminiranran_mizuyari.png)
 
 基本は春の芽出し3月中～下旬頃にたっぷりと与え、その後開花までの間はやや多めに行い、植土の表面が乾いたらたっぷりと灌水し、また乾いたらたっぷりと灌水を繰り返します。
 

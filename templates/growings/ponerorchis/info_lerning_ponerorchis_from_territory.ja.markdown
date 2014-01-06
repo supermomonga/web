@@ -1,7 +1,7 @@
 ---
 title: アワチドリの自生地から学ぶ
 ---
-<img src="/assets/images/AWACHIDORI_habitat_NOKOGIRI-YAMA_2_ja.jpg" alt="アワチドリの自生地 (Ponerorchis) - Ranyuen" />
+![アワチドリの自生地 (Ponerorchis) - Ranyuen](/assets/images/AWACHIDORI_habitat_NOKOGIRI-YAMA_2_ja.jpg)
 
 ウチョウランの仲間は自生地の環境や自生の様子など人により様々に伝えられ、参考書により相反する見解が示されていることも多く、自生地を見た事のない方にとっては何が本当なのかがわかりません。自生の姿を正確に知る事ができれば栽培の参考になり、適切な管理を可能にして上手に育てる事もできます。
 
@@ -27,7 +27,7 @@ title: アワチドリの自生地から学ぶ
 
 このように厳しい環境の中でもなんとか生き残りながら、再び偶然におきる好条件をとらえて子孫へと繋ぐ、これを繰り返しながら今まで生きてきたものと考えられます。
 
-<img src="/assets/images/AWACHIDORI_habitat_NOKOGIRI-YAMA_1_ja.jpg" alt="アワチドリの自生地 (Ponerorchis) - Ranyuen" />
+![アワチドリの自生地 (Ponerorchis) - Ranyuen](/assets/images/AWACHIDORI_habitat_NOKOGIRI-YAMA_1_ja.jpg)
 
 ## 人工的な環境を利用するウチョウラン
 ウチョウランの仲間は面白い事に人間の開発により造られた斜面などを上手く利用して生活することもよくあります。例えば道路やダム工事などで新しく作られたのり面や、かつての石切場 (採石場) 等、人の手が加わりできた場所でたくさんの自生が見られることもあります。その様子は造成地で短期間に繁殖するネジ花の姿にも似ています。
@@ -41,7 +41,7 @@ title: アワチドリの自生地から学ぶ
 
 このことからも分かるように、人間が特定の形質を選び、交配してできた個体群でも同様で、丈夫な普通個体と変異個体とでは性質が異なる事を理解し、それぞれにあわせた個々の栽培管理が必要となります。
 
-<img src="/assets/images/AWACHIDORI_habitat_NOKOGIRI-YAMA_3_ja.jpg" alt="アワチドリの自生地 (Ponerorchis) - Ranyuen" />
+![アワチドリの自生地 (Ponerorchis) - Ranyuen](/assets/images/AWACHIDORI_habitat_NOKOGIRI-YAMA_3_ja.jpg)
 
 ## アワチドリの花色 (35年前の自生地にて)
 今では品種改良がすすみ多彩なアワチドリですが、自然界に自生していた株の99%以上が淡紫紅色から紫紅色の普通個体 (通称: 並花) でした。

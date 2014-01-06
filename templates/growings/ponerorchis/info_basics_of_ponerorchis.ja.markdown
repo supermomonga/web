@@ -62,7 +62,7 @@ title: アワチドリ / 夢ちどりの基本
 ## 各部の名称
 ウチョウラン属の各部の名称
 
-<img src="/assets/images/info_gjy.jpg" alt="アワチドリ / 夢ちどり 各部の名称 (Ponerorchis) - Ranyuen" />
+![アワチドリ / 夢ちどり 各部の名称 (Ponerorchis) - Ranyuen](/assets/images/info_gjy.jpg)
 
 ## 生態
 東京周辺および自生地におけるウチョウラン属の生態
@@ -75,4 +75,4 @@ title: アワチドリ / 夢ちどりの基本
 ## 花形・花色いろいろ
 ウチョウラン属の花形、花色
 
-<img src="/assets/images/info_yn.jpg" alt="アワチドリ / 夢ちどり 花形・花色 (Ponerorchis) - Ranyuen" />
+![アワチドリ / 夢ちどり 花形・花色 (Ponerorchis) - Ranyuen](/assets/images/info_yn.jpg)

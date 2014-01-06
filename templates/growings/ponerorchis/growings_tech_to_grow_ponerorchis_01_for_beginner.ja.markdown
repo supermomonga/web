@@ -38,17 +38,15 @@ title: アワチドリ / 夢ちどりの栽培法 - 初心者編
 根元から枯れる立枯症 (灰色かび病) には5～6月に2～3回、殺菌剤を散布します。ヨトウムシ、ケムシは見つけしだい取り除きます。
 
 ## その他
-<ol>
-  <li>春の芽出し前後の遅霜による凍結に注意します。</li>
-  <li>高温期の水やりは夕方から夜間に行います。</li>
-  <li>冬は極度に凍らせないように注意します。</li>
-</ol>
+1. 春の芽出し前後の遅霜による凍結に注意します。
+2. 高温期の水やりは夕方から夜間に行います。
+3. 冬は極度に凍らせないように注意します。
 
 ## 年間管理
 <img src="/assets/images/tech_to_grow_ponerorchis_for_beginner.png" width="750" height="1080" alt="アワチドリ / 夢ちどり 年間管理の目安表 (Ponerorchis) - Ranyuen" />
 
 ##夢ちどり・アワチドリの楽しみ方一例
-<img src="/assets/images/growings_a2.jpg" alt="アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen" />
-<img src="/assets/images/growings_a3.jpg" alt="アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen" />
-<img src="/assets/images/growings_a4.jpg" alt="アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen" />
-<img src="/assets/images/growings_a5.jpg" alt="アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen" />
+![アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen](/assets/images/growings_a2.jpg)
+![アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen](/assets/images/growings_a3.jpg)
+![アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen](/assets/images/growings_a4.jpg)
+![アワチドリ / 夢ちどり (Ponerorchis) - Ranyuen](/assets/images/growings_a5.jpg)

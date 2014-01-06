@@ -3,7 +3,7 @@ title: ウチョウラン (Ponerorchis) の種類
 ---
 ## ウチョウラン
 <figure>
-  <img src="/assets/images/utyouran.jpg" alt="ウチョウラン (平戸島産) (Ponerorchis) - Ranyuen" />
+  ![ウチョウラン (平戸島産) (Ponerorchis) - Ranyuen](/assets/images/utyouran.jpg)
   <figurecaption>ウチョウラン (平戸島産)</figurecaption>
 </figure>
 
@@ -14,7 +14,7 @@ title: ウチョウラン (Ponerorchis) の種類
 一茎に5～10花、この仲間としてはやや大きめの花を咲かせ、花の変化が多く主に山野草として楽しまれています。北関東を中心に全国に愛好家がいます。関東以北の系統ではやや冷涼地に自生していることが多く、少々暑がるため、都市部周辺で初心者が栽培するには少し難しくなります。クーラー室など涼しい場所が確保できれば良く育ちます。
 
 ## アワチドリ
-<img src="/assets/images/awachidori_bot.jpg" alt="アワチドリ (Ponerorchis suzukiana) - Ranyuen" />
+![アワチドリ (Ponerorchis suzukiana) - Ranyuen](/assets/images/awachidori_bot.jpg)
 
 千葉県の房総半島にのみ自生。原種は距の大きさと特徴のある咲き方でウチョウランとの区別は容易です。川沿いの斜面などウチョウランよりも水気の多い場所に自生が見られ葉の枚数が多く、その分蒸散量も多くなりウチョウランよりも水分を好みます。
 
@@ -23,7 +23,8 @@ title: ウチョウラン (Ponerorchis) の種類
 アワチドリという和名は発見者、鈴木吉五郎氏の話では「亀山から清澄山に行く途中、上総の国からわずかに安房の国に入った場所、清澄山四方木付近で発見したため付けた」とのこと。しかし実際には安房の国よりも上総の国に多く自生しています。低山に自生するため日中の暑さには強いのですが、夜間なるべく涼しくなるように心掛けます。
 
 ## クロカミラン
-<img src="/assets/images/kurokamiran.jpg" alt="クロカミラン (Ponerorchis) - Ranyuen"/>
+![クロカミラン (Ponerorchis) - Ranyuen](/assets/images/kurokamiran.jpg)
+<img src="" alt=""/>
 
 佐賀県黒髪山とその周辺地域に自生します。焼物で有名な町、有田の駅周辺や神社の裏山など、人里近くの山でも見られましたが、採取により激減してしまいました。開花期に竜門ダム周辺を訪れると今でも人の手の届かないところに点在して開花する様子が見られます (要双眼鏡)。
 
@@ -32,7 +33,7 @@ title: ウチョウラン (Ponerorchis) の種類
 自生地ではヒナランと一緒に生えている様子も見られますが、これら2種間の雑種は見当たりません。人工交配では二種間の雑種も作り出されています。
 
 ## サツマチドリ
-<img src="/assets/images/satsumachidori.jpg" alt="サツマチドリ (Ponerorchis) - Ranyuen" />
+![サツマチドリ (Ponerorchis) - Ranyuen](/assets/images/satsumachidori.jpg)
 
 昭和の終わり頃に鹿児島県下こしき島で発見された種類。その後、前川博士により<i>P.kurokamiana var.micropunctata</i>とされました。発見当時はクロカミランが種として扱われ (<i>P.kurokamiana</i>) その変種としてvar.micropunctataが発見されたことで、分類学者のレベルの高さに多くの人が驚かされました。
 
