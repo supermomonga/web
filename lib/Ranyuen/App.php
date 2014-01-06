@@ -26,6 +26,7 @@ class App
      */
     public function __construct($config = [])
     {
+        session_start();
         $env = 'development';
         if (isset($_ENV['SERVER_ENV'])) {
             $env = $_ENV['SERVER_ENV'];
@@ -68,6 +69,7 @@ class App
         foreach ($this->getNav($lang, $template_name) as $name => $nav) {
             $params["${name}_nav"] = $nav;
         }
+        $params['bgimage'] = (new BgImage)->getRandom();
         echo $renderer
             ->setLayout($this->config['layout'])
             ->render("$template_name.$lang", $params);

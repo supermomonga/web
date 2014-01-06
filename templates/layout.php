@@ -16,6 +16,11 @@ $breadcrumb = []; // FIXME: Remove this line.
     <link rel="stylesheet" href="/assets/bower_components/normalize-css/normalize.css"/>
     <link href="http://fonts.googleapis.com/css?family=Alef:400,700" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="/assets/stylesheets/layout.css"/>
+    <style>
+    body {
+        background: url('<?php echo $bgimage; ?>') fixed;
+    }
+    </style>
 </head>
 <body>
     <div class="lang">
