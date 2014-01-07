@@ -2,7 +2,6 @@
 namespace Ranyuen;
 
 use \Slim;
-use \Symfony\Component\Yaml\Yaml;
 
 /**
  * Quick start
@@ -65,11 +64,7 @@ class App
         if (isset($this->config['lang'][$lang])) {
             $lang = $this->config['lang'][$lang];
         }
-        $params['lang'] = $lang;
-        foreach ($this->getNav($lang, $template_name) as $name => $nav) {
-            $params["${name}_nav"] = $nav;
-        }
-        $params['bgimage'] = (new BgImage)->getRandom();
+        $this->mergeParams($lang, $template_name, $params);
         echo $renderer
             ->setLayout($this->config['layout'])
             ->render("$template_name.$lang", $params);
@@ -154,57 +149,15 @@ class App
         });
     }
 
-    /**
-     * Get list of navigations.
-     *
-     * @param  string $lang
-     * @param  string $template_name
-     * @return array  [ 'global' => array $global_nav,
-     *                              'news'   => array $news_nav,
-     *                              'local'  => array $local_nav ]
-     */
-    private function getNav($lang, $template_name)
+    private function mergeParams($lang, $template_name, &$params)
     {
-        $gather = function ($navs) {
-            $index = [];
-            $local = [];
-            $sub = [];
-            foreach ($navs as $href => $title) {
-                if (is_string($title)) {
-                    if ($href === 'index') {
-                        $index['/'] = $title;
-                    } else {
-                        $local[$href] = $title;
-                    }
-                } else {
-                    $sub["$href/"] = isset($navs[$href]['index']) ?
-                        $navs[$href]['index'] :
-                        null;
-                }
-            }
-            $local = array_merge($index, $local);
-            $local = array_merge($local, $sub);
+        $params['lang'] = $lang;
 
-            return $local;
-        };
-        $navs = Yaml::parse(file_get_contents(
-            "{$this->config['templates.path']}/nav.json"))[$lang];
-        $global = $gather($navs);
-        $news = isset($navs['news']) ? $navs['news'] : [];
-        unset($news['index']);
-        $template_name = explode('/', $template_name);
-        foreach ($template_name as $part) {
-            if ($part && $part !== 'index') {
-                if (!(isset($navs[$part]) && is_array($navs[$part]))) { break; }
-                $navs = $navs[$part];
-            }
-        }
-        $local = $gather($navs);
+        $nav = new Navigation($this->config);
+        $params['global_nav'] = $nav->getGlobalNav($lang);
+        $params['local_nav'] = $nav->getLocalNav($lang, $template_name);
+        $params['news_nav'] = $nav->getNews($lang);
 
-        return [
-            'global' => $global,
-            'news'   => $news,
-            'local'  => $local
-        ];
+        $params['bgimage'] = (new BgImage)->getRandom();
     }
 }
