@@ -1,6 +1,7 @@
 <?php
 namespace Ranyuen;
 
+use Monolog;
 use Monolog\Handler\RotatingFileHandler;
 use Clover\Text\LTSV;
 
@@ -16,13 +17,16 @@ class Logger
     public function __construct($name, $config)
     {
         $this->config = $config;
-        $this->log = new \Monolog\Logger($name);
+        $this->log = new Monolog\Logger($name);
         $this->log->pushHandler(new RotatingFileHandler(
             "{$this->config['log.path']}/$name.log",
             0,
             $this->config['log.level']));
     }
 
+    /**
+     * @return Logger
+     */
     public function addAccessInfo()
     {
         $ltsv = new LTSV;
@@ -37,5 +41,7 @@ class Logger
         if (isset($_SERVER['HTTP_USER_AGENT']))
             $ltsv->add('ua', $_SERVER['HTTP_USER_AGENT']);
         $this->log->addInfo($ltsv->toLine());
+
+        return $this;
     }
 }

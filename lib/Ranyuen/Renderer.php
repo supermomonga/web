@@ -60,11 +60,13 @@ class Renderer
         if ($fromtMatter) {
             $__params = array_merge($fromtMatter, $__params);
         }
+        $__params['h'] = new Helper($this->config);
         $render = function () use ($__params) {
-            $h = new Helper;
             foreach (func_get_arg(1) as $__k => $__v) {
                 ${$__k} = $__v;
             }
+            unset($__k);
+            unset($__v);
             ob_start();
             eval('?>' . func_get_arg(0));
 

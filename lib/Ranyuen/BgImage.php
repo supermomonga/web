@@ -3,7 +3,7 @@ namespace Ranyuen;
 
 class BgImage
 {
-    public $resources = [];
+    private $resources = [];
 
     public function __construct()
     {

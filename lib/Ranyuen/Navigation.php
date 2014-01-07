@@ -69,9 +69,7 @@ class Navigation
         $path = '';
         foreach (explode('/', $template_name) as $part) {
             $path .= '/';
-            if (isset($nav['index'])) {
-                $breadcrumb[$path] = $nav['index'];
-            }
+            if (isset($nav['index'])) { $breadcrumb[$path] = $nav['index']; }
             if (isset($nav[$part])) {
                 $path .= $part;
                 $nav = $nav[$part];

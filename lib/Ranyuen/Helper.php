@@ -6,6 +6,13 @@ namespace Ranyuen;
  */
 class Helper
 {
+    private $config;
+
+    public function __construct($config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * Escape all HTML5 special charactors.
      *
@@ -71,8 +78,7 @@ class Helper
      */
     public function render($template, $params)
     {
-        $config = (new Config)->load();
-        echo (new Renderer($config))
+        echo (new Renderer($this->config))
             ->renderTemplate($template, $params);
     }
 }

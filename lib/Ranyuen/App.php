@@ -23,21 +23,18 @@ class App
     /**
      * @param string|array $config
      */
-    public function __construct($config = [])
+    public function __construct($config = 'development')
     {
         session_start();
-        $env = 'development';
-        if (isset($_ENV['SERVER_ENV'])) {
-            $env = $_ENV['SERVER_ENV'];
-        }
+        $env = isset($_ENV['SERVER_ENV']) ? $_ENV['SERVER_ENV'] : 'development';
         if (is_string($config)) {
             $env = $config;
             $config = (new Config)->load("config/$config.yaml");
         }
+        if ($env === 'development') { ini_set('display_errors', 1); }
         $this->config = $this->setDefaultConfig($config, $env);
         $this->app = new Slim\Slim;
         $this->app->config($this->config);
-        $this->setDefaultRouteConditions($this->config);
         $this->applyDefaultRoutes($this->app);
         $this->logger = new Logger($this->config['mode'], $this->config);
     }
@@ -100,29 +97,11 @@ class App
     }
 
     /**
-     * @param array $config
-     */
-    private function setDefaultRouteConditions($config)
-    {
-        $langs = [];
-        $dir = $config['templates.path'];
-        if ($handle = opendir($dir)) {
-            while (false !== ($file = readdir($handle))) {
-                if (is_dir($dir . $file)) { $langs[] = $file; }
-            }
-        }
-        $langs = array_unique(array_merge($langs, array_keys($config['lang'])));
-        $lang_regex = implode('|', $langs);
-        Slim\Route::setDefaultConditions([
-            'lang' => $lang_regex
-        ]);
-    }
-
-    /**
      * @param \Slim\Slim
      */
     private function applyDefaultRoutes($app)
     {
+        $this->setDefaultRouteConditions($this->config);
         $controller = function ($lang, $path) {
             $this->render($lang, $path);
             $this->logger->addAccessInfo();
@@ -147,6 +126,25 @@ class App
             $path = implode('/', $path);
             $controller('default', $path);
         });
+    }
+
+    /**
+     * @param array $config
+     */
+    private function setDefaultRouteConditions($config)
+    {
+        $langs = [];
+        $dir = $config['templates.path'];
+        if ($handle = opendir($dir)) {
+            while (false !== ($file = readdir($handle))) {
+                if (is_dir($dir . $file)) { $langs[] = $file; }
+            }
+        }
+        $langs = array_unique(array_merge($langs, array_keys($config['lang'])));
+        $lang_regex = implode('|', $langs);
+        Slim\Route::setDefaultConditions([
+            'lang' => $lang_regex
+        ]);
     }
 
     private function mergeParams($lang, $template_name, &$params)
