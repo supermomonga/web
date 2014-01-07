@@ -51,6 +51,19 @@ table {
   @include menulink;
   color: gray;
   font-size: smaller;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+
+    &+li:before { content: '>'; }
+  }
+
+  a { color: gray; }
 }
 
 @-webkit-keyframes animateLogo {

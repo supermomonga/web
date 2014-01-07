@@ -71,6 +71,15 @@ table th, table td {
   transition: 0.3s ease-in-out; }
 .breadcrumb a:hover, .breadcrumb a:focus {
   color: #7878ff; }
+.breadcrumb ul {
+  margin: 0;
+  padding: 0; }
+.breadcrumb li {
+  display: inline; }
+.breadcrumb li + li:before {
+  content: '>'; }
+.breadcrumb a {
+  color: gray; }
 
 @-webkit-keyframes animateLogo {
   0% {

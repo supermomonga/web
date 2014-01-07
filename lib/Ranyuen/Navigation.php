@@ -57,6 +57,32 @@ class Navigation
         return $this->gather($nav);
     }
 
+    /**
+     * @param  string $lang
+     * @param  string $template_name
+     * @return array
+     */
+    public function getBreadcrumb($lang, $template_name)
+    {
+        $nav = $this->nav[$lang];
+        $breadcrumb = [];
+        $path = '';
+        foreach (explode('/', $template_name) as $part) {
+            $path .= '/';
+            if (isset($nav['index'])) {
+                $breadcrumb[$path] = $nav['index'];
+            }
+            if (isset($nav[$part])) {
+                $path .= $part;
+                $nav = $nav[$part];
+            } else {
+                break;
+            }
+        }
+
+        return $breadcrumb;
+    }
+
     private function gather($nav)
     {
         $index = [];

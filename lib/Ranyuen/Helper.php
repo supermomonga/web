@@ -34,11 +34,6 @@ class Helper
         echo '</ul>';
     }
 
-    public function echoBreadcrumb($breadcrumb)
-    {
-        echo '<div class="breadcrumb"><a href="">Home</a> &gt; category</div>'; // FIXME: Write the logic.
-    }
-
     /**
      * Generate pager links.
      *

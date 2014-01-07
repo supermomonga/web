@@ -157,6 +157,7 @@ class App
         $params['global_nav'] = $nav->getGlobalNav($lang);
         $params['local_nav'] = $nav->getLocalNav($lang, $template_name);
         $params['news_nav'] = $nav->getNews($lang);
+        $params['breadcrumb'] = $nav->getBreadcrumb($lang, $template_name);
 
         $params['bgimage'] = (new BgImage)->getRandom();
     }

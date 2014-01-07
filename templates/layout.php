@@ -5,7 +5,6 @@ if ($lang == 'ja') {
     $base = '/e/';
 }
 $home = "http://ranyuen.com$base";
-$breadcrumb = []; // FIXME: Remove this line.
 ?>
 <!DOCTYPE HTML>
 <html lang="<?php $h->h($lang); ?>">
@@ -64,7 +63,9 @@ $breadcrumb = []; // FIXME: Remove this line.
                 </a>
             </div>
             <div class="content">
-            <?php $h->echoBreadcrumb($breadcrumb); ?>
+                <div class="breadcrumb">
+                <?php $h->echoNav($breadcrumb, "/$lang/"); ?>
+                </div>
                 <div class="local_nav">
                 <?php $h->echoNav($local_nav, './'); ?>
                 </div>
