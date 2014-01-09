@@ -5,6 +5,7 @@ use \Symfony\Component\Yaml\Yaml;
 
 class Navigation
 {
+    private $config;
     private $nav;
 
     /**
@@ -12,6 +13,7 @@ class Navigation
      */
     public function __construct($config)
     {
+        $this->config = $config;
         $this->nav = Yaml::parse(file_get_contents("{$config['templates.path']}/nav.json"));
     }
 
@@ -22,6 +24,17 @@ class Navigation
     public function getGlobalNav($lang)
     {
         return $this->gather($this->nav[$lang]);
+    }
+
+    /**
+     * @return string[]
+     */
+    public function getLangs()
+    {
+        $langs = array_keys($this->nav);
+        $langs = array_unique(array_merge($langs, array_keys($this->config['lang'])));
+
+        return $langs;
     }
 
     /**

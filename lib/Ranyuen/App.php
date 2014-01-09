@@ -133,14 +133,7 @@ class App
      */
     private function setDefaultRouteConditions($config)
     {
-        $langs = [];
-        $dir = $config['templates.path'];
-        if ($handle = opendir($dir)) {
-            while (false !== ($file = readdir($handle))) {
-                if (is_dir($dir . $file)) { $langs[] = $file; }
-            }
-        }
-        $langs = array_unique(array_merge($langs, array_keys($config['lang'])));
+        $langs = (new Navigation($this->config))->getLangs();
         $lang_regex = implode('|', $langs);
         Slim\Route::setDefaultConditions([
             'lang' => $lang_regex
