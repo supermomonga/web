@@ -20,6 +20,14 @@ figure figurecaption {
 img {
   max-width: 100%; }
 
+a:not(.inactive) {
+  border-radius: 4px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out; }
+a:not(.inactive):hover, a:not(.inactive):focus {
+  background: rgba(0, 0, 0, 0.6);
+  color: #f064b4; }
+
 table th, table td {
   border: 1px solid gray; }
 
@@ -32,7 +40,7 @@ table th, table td {
   width: 1024px; }
 .container .global_nav ul {
   background: rgba(255, 180, 100, 0.8);
-  border-radius: 6px;
+  border-radius: 4px;
   display: block;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
@@ -40,9 +48,9 @@ table th, table td {
 .container .global_nav ul:hover, .container .global_nav ul:focus {
   background: #ff78e6; }
 .container .global_nav ul li {
+  padding: 2px 0.5em;
   display: inline-block;
-  margin: 0.6em 0.1em;
-  padding: 2px 0.5em; }
+  margin: 0.6em 0.1em; }
 .container .global_nav ul li a {
   border-radius: 4px;
   color: blue;
@@ -51,7 +59,8 @@ table th, table td {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out; }
 .container .global_nav ul li a:hover, .container .global_nav ul li a:focus {
-  color: #7878ff; }
+  background: rgba(0, 0, 0, 0.6);
+  color: #f064b4; }
 
 .lang {
   font-size: smaller;
@@ -70,7 +79,8 @@ table th, table td {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out; }
 .breadcrumb a:hover, .breadcrumb a:focus {
-  color: #7878ff; }
+  background: rgba(0, 0, 0, 0.6);
+  color: #f064b4; }
 .breadcrumb ul {
   margin: 0;
   padding: 0; }
@@ -101,7 +111,6 @@ table th, table td {
 
 .header {
   background: rgba(255, 153, 153, 0.4);
-  background-image: url("../images/backgrounds/chidori_circle_2.jpg");
   border-radius: 8px;
   height: 136px;
   position: relative; }
@@ -145,7 +154,7 @@ table th, table td {
   overflow: hidden; }
 .main .local_nav ul {
   background: rgba(0, 255, 200, 0.4);
-  border-radius: 6px;
+  border-radius: 4px;
   display: block;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
@@ -153,9 +162,9 @@ table th, table td {
 .main .local_nav ul:hover, .main .local_nav ul:focus {
   background: rgba(0, 255, 120, 0.8); }
 .main .local_nav ul li {
+  padding: 2px 0.5em;
   display: inline-block;
-  margin: 0.6em 0.1em;
-  padding: 2px 0.5em; }
+  margin: 0.6em 0.1em; }
 .main .local_nav ul li a {
   border-radius: 4px;
   color: blue;
@@ -164,7 +173,8 @@ table th, table td {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out; }
 .main .local_nav ul li a:hover, .main .local_nav ul li a:focus {
-  color: #7878ff; }
+  background: rgba(0, 0, 0, 0.6);
+  color: #f064b4; }
 
 .aside {
   float: left;
@@ -183,7 +193,8 @@ table th, table td {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out; }
 .aside .news li a:hover, .aside .news li a:focus {
-  color: #7878ff; }
+  background: rgba(0, 0, 0, 0.6);
+  color: #f064b4; }
 .aside .facebook {
   color: blue;
   overflow: hidden; }
@@ -208,26 +219,25 @@ table th, table td {
   float: right;
   position: relative;
   width: 768px; }
-.content .share {
-  text-align: right; }
 
 .footer {
+  padding: 2px 0.5em;
   border-top: 1px solid gray;
   clear: both;
   color: gray;
   font-size: smaller;
   margin-top: 32px;
-  position: relative;
-  padding: 2px 0.5em; }
+  position: relative; }
 .footer a {
   border-radius: 4px;
-  color: gray;
+  color: blue;
   line-height: 1.1em;
   padding: 2px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out; }
 .footer a:hover, .footer a:focus {
-  color: blue; }
+  background: rgba(0, 0, 0, 0.6);
+  color: #f064b4; }
 .footer .menu {
   overflow: hidden; }
 .footer .menu ul {

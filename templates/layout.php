@@ -16,7 +16,7 @@ $home = "http://ranyuen.com$base";
     <link href="http://fonts.googleapis.com/css?family=Alef:400,700" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="/assets/stylesheets/layout.css"/>
     <style>
-    body {
+    body, .header {
         background: url('<?php echo $bgimage; ?>') fixed;
     }
     </style>
@@ -39,7 +39,7 @@ $home = "http://ranyuen.com$base";
         <?php $h->echoNav($global_nav, $base); ?>
         </div>
         <div class="header">
-            <a href="<?php $h->h($home); ?>" class="logo" title="Ranyuen">
+            <a href="<?php $h->h($home); ?>" class="logo inactive" title="Ranyuen">
                 <img src="/assets/images/icons/ranyuen.png" alt="Ranyuen"
                      longdesc="<?php $h->h($home); ?>"/>
             </a>
@@ -70,7 +70,6 @@ $home = "http://ranyuen.com$base";
                 <?php $h->echoNav($local_nav, './'); ?>
                 </div>
                 <?php $h->render($content, $__params); ?>
-                <a class="gotop" href="#top">▲Go back to Top</a>
             </div>
         </div>
         <div class="footer">

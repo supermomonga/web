@@ -1,10 +1,9 @@
 $grid: 32px;
-$hoverColor: #f99;
-$hoverColor: rgb(120, 120, 255);
+$hoverColor: rgb(240, 100, 180);
+$hoverBgColor: rgba(0, 0, 0, 0.6);
 
 @mixin gradient($property, $gradient_type, $params...) {
   #{$property}:    -moz-#{$gradient_type}-gradient($params);
-  #{$property}:      -o-#{$gradient_type}-gradient($params);
   #{$property}:  -khtml-#{$gradient_type}-gradient($params);
   #{$property}: -webkit-#{$gradient_type}-gradient($params);
   #{$property}:     -ms-#{$gradient_type}-gradient($params);
@@ -12,7 +11,6 @@ $hoverColor: rgb(120, 120, 255);
 }
 
 @mixin menulink {
-  // height: 1.1em;
   padding: 2px 0.5em;
 
   a{
@@ -23,31 +21,17 @@ $hoverColor: rgb(120, 120, 255);
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
 
-    &:hover, &:focus { color: $hoverColor; }
+    &:hover, &:focus {
+      background: $hoverBgColor;
+      color: $hoverColor;
+    }
   }
 }
-
-@mixin menulink_footer {
-  // height: 1.1em;
-  padding: 2px 0.5em;
-
-  a{
-    border-radius: 4px;
-    color: gray;
-    line-height: 1.1em;
-    padding: 2px;
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-
-    &:hover, &:focus { color: rgb(0,0,255); }
-  }
-}
-
 
 @mixin navigation($background, $hover_background) {
   ul {
     background: $background;
-    border-radius: 6px;
+    border-radius: 4px;
     display: block;
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
@@ -56,9 +40,9 @@ $hoverColor: rgb(120, 120, 255);
     &:hover, &:focus { background: $hover_background; }
 
     li {
+      @include menulink;
       display: inline-block;
       margin: 0.6em 0.1em;
-      @include menulink;
     }
   }
 }

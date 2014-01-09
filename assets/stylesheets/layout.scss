@@ -2,6 +2,7 @@
 @import "helpers";
 
 html, body { margin: 0; padding: 0; }
+
 body {
   background-attachment: fixed;
   font-family: "Alef", sans-serif;
@@ -21,6 +22,17 @@ figure {
 }
 
 img { max-width: 100%; }
+
+a:not(.inactive) {
+  border-radius: 4px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+
+  &:hover, &:focus {
+    background: $hoverBgColor;
+    color: $hoverColor;
+  }
+}
 
 table {
   th, td {
@@ -60,7 +72,7 @@ table {
   li {
     display: inline;
 
-    &+li:before { content: '>'; }
+    & + li:before { content: '>'; }
   }
 
   a { color: gray; }
@@ -78,7 +90,6 @@ table {
 .header {
   $logosize: 112px;
   background: rgba(255, 153, 153, 0.4);
-  background-image: url("../images/backgrounds/chidori_circle_2.jpg");
   border-radius: 8px;
   height: $logosize + 24;
   position: relative;
@@ -186,18 +197,16 @@ table {
   float: right;
   position: relative;
   width: $grid * 24;
-
-  .share { text-align: right; }
 }
 
 .footer {
+  @include menulink;
   border-top: 1px solid gray;
   clear: both;
   color: gray;
   font-size: smaller;
   margin-top: $grid;
   position: relative;
-  @include menulink_footer;
 
   .menu {
     overflow: hidden;
