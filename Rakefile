@@ -1,6 +1,4 @@
 # coding=utf-8
-require 'json'
-
 # {{{ contrib
 class ContribScss
   # @param [Hash] options
@@ -27,6 +25,9 @@ class ContribScss
 end
 # }}} contrib
 
+require 'json'
+
+desc 'Build SCSS files.'
 task :scss, &ContribScss.new(src: 'assets/stylesheets', all: %w{layout})
 
 desc 'Generate site navigation.'
@@ -36,6 +37,20 @@ task :gen_nav do
   puts 'Generate navigation at templates/nav.json'
 end
 
+desc 'Pull master repository.'
+task :deploy do
+  require 'net/ssh'
+
+  print 'Enter SSH password: '
+  password = $stdin.gets.chomp
+  host = 'ranyuen.sakura.ne.jp'
+  user = 'ranyuen'
+  Net::SSH.start host, user, password: password do |ssh|
+    puts ssh.exec!('cd $HOME/www && git pull origin master > logs/deploy.log && cat logs/deploy.log')
+  end
+end
+
+desc 'Build files.'
 task :build => [:scss, :gen_nav]
 
 def gather_navs dir
