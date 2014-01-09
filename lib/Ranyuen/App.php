@@ -32,8 +32,8 @@ class App
             $config = (new Config)->load("config/$config.yaml");
         }
         if ($env === 'development') { ini_set('display_errors', 1); }
-        $this->config = $this->setDefaultConfig($config, $env);
         $this->app = new Slim\Slim;
+        $this->config = $this->setDefaultConfig($config, $env);
         $this->app->config($this->config);
         $this->applyDefaultRoutes($this->app);
         $this->logger = new Logger($this->config['mode'], $this->config);
