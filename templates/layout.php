@@ -50,7 +50,7 @@ $home = "http://ranyuen.com$base";
                 <div class="news">
                     <img src="/assets/images/icons/feed.png"
                          width="30" height="30"/>NEWS
-                <?php $h->echoNav($news_nav); ?>
+                <?php $h->echoNav($news_nav, "$base/news/"); ?>
                 </div>
                 <a href="https://www.facebook.com/ranyuenjapan"
                    target="_blank"
