@@ -21,17 +21,14 @@ class App
     private $config;
 
     /**
-     * @param string|array $config
+     * @param array $config
      */
-    public function __construct($config = 'development')
+    public function __construct($config = null)
     {
         session_start();
         $env = isset($_ENV['SERVER_ENV']) ? $_ENV['SERVER_ENV'] : 'development';
-        if (is_string($config)) {
-            $env = $config;
-            $config = (new Config)->load("config/$config.yaml");
-        }
         if ($env === 'development') { ini_set('display_errors', 1); }
+        if (is_null($config)) { $config = (new Config)->load("config/$env.yaml"); }
         $this->app = new Slim\Slim;
         $this->config = $this->setDefaultConfig($config, $env);
         $this->app->config($this->config);
