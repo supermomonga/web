@@ -82,6 +82,7 @@ class App
         $set_default($config['lang'], 'default', 'en');
         $set_default($config, 'layout', 'layout');
         $set_default($config, 'log.path', 'logs');
+        $set_default($config, 'redirect', []);
 
         // Configuration for Slim Framwork.
         $set_default($config, 'debug', true);
@@ -99,7 +100,12 @@ class App
     private function applyDefaultRoutes($app)
     {
         $this->setDefaultRouteConditions($this->config);
-        $controller = function ($lang, $path) {
+        $controller = function ($lang, $path) use ($app) {
+            foreach ($this->config['redirect'] as $src => $dest) {
+                if ($_SERVER['REQUEST_URI'] === $src) {
+                    $app->redirect($dest, 301);
+                }
+            }
             $this->render($lang, $path);
             $this->logger->addAccessInfo();
         };
