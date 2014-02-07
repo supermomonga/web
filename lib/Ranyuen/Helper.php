@@ -51,7 +51,9 @@ class Helper
     {
         echo "<iframe width=\"$width\" height=\"$height\" src=\"//www.youtube.com/embed/$movie_id\" frameborder=\"0\" allowfullscreen></iframe>";
         if ($title) {
-            echo "<a href=\"http://youtu.be/$movie_id\">$title</a>";
+            echo "<a href=\"http://youtu.be/$movie_id\">";
+            $this->h($title);
+            echo "</a>";
         }
     }
 
