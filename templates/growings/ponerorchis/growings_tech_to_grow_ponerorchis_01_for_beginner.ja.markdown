@@ -19,8 +19,7 @@ title: アワチドリ / 夢ちどりの栽培法 - 初心者編
 
 ## 球根の植え付け
 休眠中に植え替えや植え付けをします。 (通常12月～3月)
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/MT2eVsddJK8" frameborder="0" allowfullscreen></iframe>
+<?php $h->echoYouTube('MT2eVsddJK8'); ?>
 
 ## 水やり
 <img src="/assets/images/growings_miniminiranran_mizuyari.png" width="250" alt="アワチドリ / 夢ちどり 水やり (Ponerorchis) - Ranyuen" />

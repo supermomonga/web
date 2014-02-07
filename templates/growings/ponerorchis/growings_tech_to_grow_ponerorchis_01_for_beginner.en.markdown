@@ -9,12 +9,11 @@ AWACHIDORI grows in wild only in a special part of the Boso-peninsula of Chiba p
 
 ### Planting the flower bulbs
 We replace and plant during their dormant period. (Usually within December to March)
-<iframe width="640" height="360" src="https://www.youtube.com/embed/aaELPiYiynw" frameborder="0" allowfullscreen><a href="http://youtu.be/aaELPiYiynw">Simple techniques to grow YUMECHIDORI and AWACHIDORI - Ranyuen</a></iframe>
-
+<?php $h->echoYouTube('aaELPiYiynw', 'Simple techniques to grow YUMECHIDORI and AWACHIDORI - Ranyuen'); ?>
 
 ### Planting Ponerorchis using moss
 We introduce to you how to transplant onerorchis using moss.
-<iframe width="640" height="360" src="https://www.youtube.com/embed/CeGQS4_zMuA" frameborder="0" allowfullscreen><a href="http://youtu.be/CeGQS4_zMuA">Planting Ponerorchis using moss - Ranyuen</a></iframe>
+<?php $h->echoYouTube('CeGQS4_zMuA', 'Planting Ponerorchis using moss - Ranyuen'); ?>
 
 ### Pots
 A small plastic or pots that are not easily dried are recommended. Recommended number of bulbs would be one to two for 6cm diameter pot, three to five for the 7.5cm diameter pot and ten to fifteen for 10cm diameter pot.

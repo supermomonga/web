@@ -77,7 +77,7 @@ $home = "http://ranyuen.com$base";
             <div class="menu">
             <?php $h->echoNav($global_nav, $base); ?>
             </div>
-            <p class="copyright">Copyright (C) 2010-2013
+            <p class="copyright">Copyright (C) 2010-2014
             <a href="<?php $h->h($home); ?>">Ranyuen</a> All Rights Reserved.<br/>
             Spring Calanthe (EBINE) and Ponerorchis (AWACHIDORI &amp; YUMECHIDORI)
             you see on our website are all bred, researched and developed in our

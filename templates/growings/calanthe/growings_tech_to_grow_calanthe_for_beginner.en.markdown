@@ -9,8 +9,7 @@ This new type of EBINE is improved as a colorful orchid, which you can grow in y
 
 ### Planting Ebine in the garden
 We show how to plant in this video. (Planting Usually within February to May)
-<iframe width="640" height="360" src="https://www.youtube.com/embed/UmnzM6DF-XQ" frameborder="0" allowfullscreen><a href="http://youtu.be/UmnzM6DF-XQ">Simple techniques to grow YUMECHIDORI and AWACHIDORI - Ranyuen</a></iframe>
-
+<?php $h->echoYouTube('UmnzM6DF-XQ', 'Simple techniques to grow YUMECHIDORI and AWACHIDORI - Ranyuen'); ?>
 
 ### Recommended places
 For both potted or gardened, avoid shadowy area nor under all day of direct sunlight. It grows best in the bright shade with occasional sunlight.

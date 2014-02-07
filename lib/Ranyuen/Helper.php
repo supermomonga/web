@@ -42,6 +42,20 @@ class Helper
     }
 
     /**
+     * @param string  $movie_id
+     * @param string  $title
+     * @param integer $width
+     * @param integer $height
+     */
+    public function echoYouTube($movie_id, $title='', $width=560, $height=315)
+    {
+        echo "<iframe width=\"$width\" height=\"$height\" src=\"//www.youtube.com/embed/$movie_id\" frameborder=\"0\" allowfullscreen></iframe>";
+        if ($title) {
+            echo "<a href=\"http://youtu.be/$movie_id\">$title</a>";
+        }
+    }
+
+    /**
      * Generate pager links.
      *
      * @param  integer $page
