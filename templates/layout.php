@@ -18,6 +18,7 @@ $home = "http://ranyuen.com$base";
     <meta name="description" content="<?php $h->h($description); ?>"/>
 <?php } ?>
     <link rel="home" href="<?php $h->h($home); ?>"/>
+    <link rel="author" href="https://plus.google.com/117493105665785554638?rel=author"/>
     <link rel="stylesheet" href="/assets/bower_components/normalize-css/normalize.css"/>
     <link href="http://fonts.googleapis.com/css?family=Alef:400,700" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="/assets/stylesheets/layout.css"/>
@@ -45,7 +46,7 @@ $home = "http://ranyuen.com$base";
         <?php $h->echoNav($global_nav, $base); ?>
         </div>
         <div class="header">
-            <a href="<?php $h->h($home); ?>" class="logo inactive" title="Ranyuen">
+            <a rel="home" href="<?php $h->h($home); ?>" class="logo inactive" title="Ranyuen">
                 <img src="/assets/images/icons/ranyuen.png" alt="Ranyuen"
                      longdesc="<?php $h->h($home); ?>"/>
             </a>
@@ -70,7 +71,7 @@ $home = "http://ranyuen.com$base";
             </div>
             <div class="content">
                 <div class="breadcrumb">
-                <?php $h->echoNav($breadcrumb, $base); ?>
+                <?php $h->echoBreadcrumb($breadcrumb, $base); ?>
                 </div>
                 <div class="local_nav">
                 <?php $h->echoNav($local_nav, './'); ?>
@@ -83,10 +84,10 @@ $home = "http://ranyuen.com$base";
             <?php $h->echoNav($global_nav, $base); ?>
             </div>
             <p class="copyright">Copyright (C) 2010-2014
-            <a href="<?php $h->h($home); ?>">Ranyuen</a> All Rights Reserved.<br/>
+            <a rel="home" href="<?php $h->h($home); ?>">Ranyuen</a> All Rights Reserved.<br/>
             Spring Calanthe (EBINE) and Ponerorchis (AWACHIDORI &amp; YUMECHIDORI)
             you see on our website are all bred, researched and developed in our
-            <a href="<?php $h->h($home); ?>">Ranyuen</a>&#39;s farm.</p>
+            <a rel="home" href="<?php $h->h($home); ?>">Ranyuen</a>&#39;s farm.</p>
         </div>
     </div>
     <script src="/assets/javascripts/messageForDeveloperFromRanyuen.js"></script>

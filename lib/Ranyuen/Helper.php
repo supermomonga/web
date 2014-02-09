@@ -41,6 +41,19 @@ class Helper
         echo '</ul>';
     }
 
+    public function echoBreadcrumb($nav, $base = '/')
+    {
+        echo '<ul itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';
+        foreach ($nav as $href => $title) {
+            echo '<li><a href="';
+            $this->h(preg_replace('/\/\//', '/', $base . $href));
+            echo '" itemprop="url"><span itemprop="title">';
+            $this->h($title);
+            echo '</span></a></li>';
+        }
+        echo '</ul>';
+    }
+
     /**
      * @param string  $movie_id
      * @param string  $title

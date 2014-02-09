@@ -14,9 +14,13 @@ title: アクセス
 ![蘭裕園への地図 - Ranyuen](/assets/images/map2_ja.jpg)
 
 ## 所在地
-農業生産法人 有限会社 蘭裕園
-
-〒264-0021<br />
-千葉市若葉区若松町 2224-10
-
-TEL/FAX	043-233-2344
+<div itemscope itemtype="http://data-vocabulary.org/Organization">
+  <div itemprop="name">農業生産法人 有限会社 蘭裕園</div>
+  <div itemprop="address" itemscope="http://data-vocabulary.org/Address">
+    <div>〒<span itemprop="postal-code">264-0021</span></div>
+    <div><span itemprop="locality">千葉市若葉区</span><span itemprop="street-address">若松町 2224-10</span></div>
+  </div>
+  <div>TEL/FAX <span itemprop="tel">043-233-2344</span></div>
+  <div>E-mail cal_pone@ranyuen.com</div>
+  <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo"><meta itemprop="latitude" content="35.638902"/><meta itemprop="longitude" content="140.173828"/></span>
+</div>

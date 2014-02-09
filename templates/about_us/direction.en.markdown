@@ -21,7 +21,13 @@ Pass by our nursery and go on about 80m and you will find a car parking space
 ![Map to Ranyuen by Car - Ranyuen](/assets/images/map2_en.jpg)
 
 ## Address
-Ranyuen
-
-2224-10 Wakamatsucho Wakabaku<br />
-Chiba 264-0021
+<div itemscope itemtype="http://data-vocabulary.org/Organization">
+  <div itemprop="name">Ranyuen</div>
+  <div itemprop="address" itemscope="http://data-vocabulary.org/Address">
+    <div><span itemprop="street-address">2224-10 Wakamatsucho Wakabaku</span><br/>
+    <span itemprop="locality">Chiba</span> <span itemprop="country-name">Japan</span></div>
+    <div itemprop="postal-code">264-0021</div>
+  </div>
+  <div>E-mail info@ranyuen.com</div>
+  <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo"><meta itemprop="latitude" content="35.638902"/><meta itemprop="longitude" content="140.173828"/></span>
+</div>
