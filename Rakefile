@@ -53,6 +53,11 @@ end
 desc 'Build files.'
 task :build => [:scss, :gen_nav]
 
+desc ''
+task :test do
+  sh 'grunt test'
+end
+
 def gather_navs dir
   def get_title content
     return '' unless content =~ /^---/
