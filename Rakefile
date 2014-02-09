@@ -41,10 +41,10 @@ desc 'Pull master repository.'
 task :deploy do
   require 'net/ssh'
 
-  print 'Enter SSH password: '
-  password = $stdin.gets.chomp
   host = 'ranyuen.sakura.ne.jp'
   user = 'ranyuen'
+  print "Enter SSH password (#{user}@#{host}): "
+  password = $stdin.gets.chomp
   Net::SSH.start host, user, password: password do |ssh|
     puts ssh.exec!('cd $HOME/www && git pull origin master > logs/deploy.log && cat logs/deploy.log')
   end

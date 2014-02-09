@@ -4,6 +4,17 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     exec: {
+      deploy: {
+        command: 'bundle exec rake deploy',
+        stdout: true,
+        stderr: true,
+        stdin: true
+      },
+      build: {
+        command: 'bundle exec rake build',
+        stdout: true,
+        stderr: true
+      },
       fixer: {
         command: 'php php-cs-fixer.phar fix index.php --level=all && ' +
                  'php php-cs-fixer.phar fix lib/ --level=all',
@@ -29,5 +40,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-exec');
 
+  grunt.registerTask('build', ['exec:build']);
+  grunt.registerTask('deploy', ['exec:deploy']);
   grunt.registerTask('test', ['jshint', 'exec:lint', 'exec:fixer']);
 };
