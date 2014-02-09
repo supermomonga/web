@@ -1,8 +1,10 @@
 <?php
 if ($lang == 'ja') {
     $base = '/';
+    $site_name = '蘭裕園';
 } else {
     $base = '/en/';
+    $site_name = 'Ranyuen';
 }
 $home = "http://ranyuen.com$base";
 ?>
@@ -10,8 +12,11 @@ $home = "http://ranyuen.com$base";
 <html lang="<?php $h->h($lang); ?>">
 <head>
     <meta charset="UTF-8"/>
-    <title><?php $h->h($title); ?> - Ranyuen</title>
+    <title><?php $h->h("$title - $site_name"); ?></title>
     <meta name="google-site-verification" content="osPpSihI4cWmpC3IfcU0MFq6zDdSPWyb7V2_ECHHo5Q"/>
+<?php if (isset($description)) { ?>
+    <meta name="description" content="<?php $h->h($description); ?>"/>
+<?php } ?>
     <link rel="home" href="<?php $h->h($home); ?>"/>
     <link rel="stylesheet" href="/assets/bower_components/normalize-css/normalize.css"/>
     <link href="http://fonts.googleapis.com/css?family=Alef:400,700" rel="stylesheet" type="text/css"/>
