@@ -35,9 +35,9 @@ table th, table td {
   background: rgba(255, 255, 255, 0.4);
   font-size: 14px;
   margin: 0 auto;
-  padding: 32px;
+  padding: 0;
   position: relative;
-  width: 1024px; }
+  width: 100%; }
 .container .global_nav ul {
   background: rgba(255, 180, 100, 0.8);
   border-radius: 4px;
@@ -61,11 +61,35 @@ table th, table td {
 .container .global_nav ul li a:hover, .container .global_nav ul li a:focus {
   background: rgba(0, 0, 0, 0.6);
   color: #f064b4; }
+.container .local_nav ul {
+  background: rgba(0, 255, 200, 0.4);
+  border-radius: 4px;
+  display: block;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  padding: 0; }
+.container .local_nav ul:hover, .container .local_nav ul:focus {
+  background: rgba(0, 255, 120, 0.8); }
+.container .local_nav ul li {
+  padding: 2px 0.5em;
+  display: inline-block;
+  margin: 0.6em 0.1em; }
+.container .local_nav ul li a {
+  border-radius: 4px;
+  color: blue;
+  line-height: 1.1em;
+  padding: 2px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out; }
+.container .local_nav ul li a:hover, .container .local_nav ul li a:focus {
+  background: rgba(0, 0, 0, 0.6);
+  color: #f064b4; }
 
 .lang {
   font-size: smaller;
   margin-bottom: 2px;
-  position: relative; }
+  position: relative;
+  text-align: right; }
 
 .breadcrumb {
   padding: 2px 0.5em;
@@ -152,34 +176,11 @@ table th, table td {
 
 .main {
   overflow: hidden; }
-.main .local_nav ul {
-  background: rgba(0, 255, 200, 0.4);
-  border-radius: 4px;
-  display: block;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  padding: 0; }
-.main .local_nav ul:hover, .main .local_nav ul:focus {
-  background: rgba(0, 255, 120, 0.8); }
-.main .local_nav ul li {
-  padding: 2px 0.5em;
-  display: inline-block;
-  margin: 0.6em 0.1em; }
-.main .local_nav ul li a {
-  border-radius: 4px;
-  color: blue;
-  line-height: 1.1em;
-  padding: 2px;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out; }
-.main .local_nav ul li a:hover, .main .local_nav ul li a:focus {
-  background: rgba(0, 0, 0, 0.6);
-  color: #f064b4; }
 
 .aside {
   float: left;
   position: relative;
-  width: 256px; }
+  width: 25%; }
 .aside .news {
   padding: 0; }
 .aside .news li {
@@ -218,7 +219,9 @@ table th, table td {
   background: rgba(255, 255, 255, 0.6);
   float: right;
   position: relative;
-  width: 768px; }
+  width: 75%; }
+.content .article {
+  margin: 0 32px; }
 
 .footer {
   padding: 2px 0.5em;

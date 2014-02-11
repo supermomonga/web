@@ -21,7 +21,7 @@ $home = "http://ranyuen.com$base";
     <link rel="home" href="<?php $h->h($home); ?>"/>
     <link rel="author" href="https://plus.google.com/117493105665785554638?rel=author"/>
     <link rel="stylesheet" href="/assets/bower_components/normalize-css/normalize.css"/>
-    <link href="http://fonts.googleapis.com/css?family=Alef:400,700" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alef:400,700" type="text/css"/>
     <link rel="stylesheet" href="/assets/stylesheets/layout.css"/>
     <style>
     body, .header {
@@ -77,7 +77,7 @@ $home = "http://ranyuen.com$base";
                 <div class="local_nav">
                 <?php $h->echoNav($local_nav, './'); ?>
                 </div>
-                <?php $h->render($content, $__params); ?>
+                <article class="article"><?php $h->render($content, $__params); ?></article>
             </div>
         </div>
         <div class="footer">
