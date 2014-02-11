@@ -128,7 +128,7 @@ desc 'Generate site navigation JSON.'
 task :gen_nav do
   g = NavGenerator.new
   nav = g.gather_navs File.absolute_path('templates')
-  nav = JSON.pretty_generate nav
+  nav = nav.to_json
   open('templates/nav.json', 'w:utf-8'){|f| f.write nav }
   puts 'Generate navigation at templates/nav.json'
 end

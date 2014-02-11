@@ -1,12 +1,15 @@
 <?php
-if ($lang == 'ja') {
-    $base = '/';
-    $site_name = '蘭裕園';
-} else {
-    $base = '/en/';
-    $site_name = 'Ranyuen';
+$site_names = ['ja' => '蘭裕園', 'en' => 'Ranyuen'];
+$site_name = $site_names[$lang];
+$home = "http://ranyuen.com{$link['base']}";
+$switch_lang = [];
+foreach ([
+    'en' => 'English',
+    'ja' => '日本語',
+] as $k => $v) {
+    $switch_lang[] =  $lang === $k ? $v : "<a href=\"{$link[$k]}\">$v</a>";
 }
-$home = "http://ranyuen.com$base";
+$switch_lang = implode(' / ', $switch_lang);
 ?>
 <!DOCTYPE HTML>
 <html lang="<?php $h->h($lang); ?>">
@@ -30,21 +33,10 @@ $home = "http://ranyuen.com$base";
     </style>
 </head>
 <body>
-    <div class="lang">
-    <?php if ($lang === 'en') { ?>
-        English
-    <?php } else { ?>
-        <a href="/en/">English</a>
-    <?php } ?> /
-    <?php if ($lang === 'ja') { ?>
-        日本語
-    <?php } else { ?>
-        <a href="/">日本語</a>
-    <?php } ?>
-    </div>
+    <div class="lang"><?php echo $switch_lang; ?></div>
     <div class="container">
         <div class="global_nav">
-        <?php $h->echoNav($global_nav, $base); ?>
+        <?php $h->echoNav($global_nav, $link['base']); ?>
         </div>
         <div class="header">
             <a rel="home" href="<?php $h->h($home); ?>" class="logo inactive" title="Ranyuen">
@@ -58,7 +50,7 @@ $home = "http://ranyuen.com$base";
                 <div class="news">
                     <img src="/assets/images/icons/feed.png"
                          width="30" height="30"/>NEWS
-                <?php $h->echoNav($news_nav, "$base/news/"); ?>
+                <?php $h->echoNav($news_nav, "{$link['base']}/news/"); ?>
                 </div>
                 <a href="https://www.facebook.com/ranyuenjapan"
                    target="_blank"
@@ -72,7 +64,7 @@ $home = "http://ranyuen.com$base";
             </div>
             <div class="content">
                 <div class="breadcrumb">
-                <?php $h->echoBreadcrumb($breadcrumb, $base); ?>
+                <?php $h->echoBreadcrumb($breadcrumb, $link['base']); ?>
                 </div>
                 <div class="local_nav">
                 <?php $h->echoNav($local_nav, './'); ?>
@@ -82,7 +74,7 @@ $home = "http://ranyuen.com$base";
         </div>
         <div class="footer">
             <div class="menu">
-            <?php $h->echoNav($global_nav, $base); ?>
+            <?php $h->echoNav($global_nav, $link['base']); ?>
             </div>
             <p class="copyright">Copyright (C) 2010-2014
             <a rel="home" href="<?php $h->h($home); ?>">Ranyuen</a> All Rights Reserved.<br/>
