@@ -142,6 +142,25 @@ task :gen_sitemap => :gen_nav do
   puts 'Generate sitemap at sitemap.xml'
 end
 
+desc 'Update dependencies (unsafe).'
+task :update_local do
+  # Unsafe updates.
+  sh 'sudo apt-get update' rescue nil
+  sh 'sudo apt-get upgrade' rescue nil
+  sh 'sudo gem update' rescue (sh 'gem update')
+  sh 'npm-check-updates -u' rescue nil
+
+  # Production updates.
+  sh 'php composer.phar self-update'
+  sh 'php composer.phar update'
+
+  # Development updates.
+  sh 'php php-cs-fixer.phar self-update'
+  sh 'npm update'
+  sh 'bundle update'
+  sh 'cd assets && bower update'
+end
+
 desc 'Pull master repository.'
 task :deploy do
   require 'net/ssh'
@@ -151,7 +170,14 @@ task :deploy do
   print "Enter SSH password (#{user}@#{host}): "
   password = $stdin.gets.chomp
   Net::SSH.start host, user, password: password do |ssh|
-    puts ssh.exec!('cd $HOME/www && git pull origin master > logs/deploy.log && cat logs/deploy.log')
+    log = 'logs/deploy.log'
+    puts ssh.exec! <<SHELL
+cd $HOME/www
+git pull origin master > #{log}
+./composer.phar self-update >> #{log}
+./composer.phar update --no-dev >> #{log}
+cat #{log}
+SHELL
   end
 end
 
