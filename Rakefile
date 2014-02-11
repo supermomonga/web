@@ -7,6 +7,8 @@ class ContribScss
   #   style: [String]   Output style. Default is 'normal'.
   #   all:   [String[]] Scss files. Default is [].
   def initialize options
+    require 'sass'
+
     @src = options[:src]
     raise ':src is required.' unless @src
     @dest = options[:dest] || @src
@@ -17,8 +19,8 @@ class ContribScss
   def to_proc
     lambda{|t, p|
       @all.each do |f|
-        puts "Generating #{f}.css..."
-        system "scss --style=#{@style} #{@src}/#{f}.scss #{@dest}/#{f}.css"
+        puts "Generate CSS at #{@dest}/#{f}.css"
+        Sass.compile_file "#{@src}/#{f}.scss", "#{@dest}/#{f}.css", {style: @style}
       end
     }
   end
@@ -26,15 +28,118 @@ end
 # }}} contrib
 
 require 'json'
+require 'rexml/document'
+require 'rexml/formatters/pretty'
+
+class NavGenerator
+  # param [String] dir
+  # return [Hash]
+  def gather_navs dir
+    cwd = File.absolute_path '.'
+    nav = {}
+    Dir.chdir dir
+    Dir.foreach '.' do |f|
+      next if f == '.' || f == '..'
+      if File.directory? f
+        sub_nav = gather_navs File.absolute_path(f)
+        sub_nav.each do |lang, n|
+          nav[lang] ||= {}
+          nav[lang][f] = n
+        end
+      elsif File.file?(f) && File.extname(f) == '.markdown'
+        meta = get_meta f
+        f = basename f
+        lang = (f.match(/\.([^.]+)$/) || [])[1] || 'default'
+        nav[lang] ||= {}
+        nav[lang][basename f] = meta[:title]
+      end
+    end
+    Dir.chdir cwd
+    @nav = nav
+    nav
+  end
+
+  # param [Hash] nav
+  # return [String] sitemap XML string.
+  def gen_sitemap nav = @nav
+    sitemap = REXML::Document.new <<XML
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+</urlset>
+XML
+    part = gen_sitemap_part nav['en'], 'http://ranyuen.com/en/'
+    part.each{|url| sitemap.root.add_element url }
+    part = gen_sitemap_part nav['ja'], 'http://ranyuen.com/'
+    part.each{|url| sitemap.root.add_element url }
+    formatter = REXML::Formatters::Pretty.new
+    formatter.compact = true
+    formatter.width = 120
+    io = StringIO.new
+    formatter.write sitemap, io
+    io.string
+  end
+
+  private
+  def get_meta filename
+    content = open(filename, 'r:utf-8'){|f| f.read }
+    return {} unless content =~ /^---/
+    title =
+      (content.lines.find{|line| line =~ /^title\s*:/ } || 'title:').
+      match(/^title\s*:\s*(.*)$/)[1].chomp
+    lastmod =
+      (content.lines.find{|line| line =~ /^lastmod\s*:/ } || 'lastmod:').
+      match(/^lastmod\s*:\s*(.*)$/)[1].chomp ||
+      File.mtime(filename).strftime('%Y-%m-%dT%H:%M:%SZ')
+    { title:   title,
+      lastmod: lastmod }
+  end
+
+  def basename filename
+    File.basename filename, File.extname(filename)
+  end
+
+  def gen_sitemap_part nav, base_url
+    nodes = []
+    nav.each do |key, child_nav|
+      if child_nav.respond_to? :each
+        nodes += gen_sitemap_part(child_nav, "#{base_url}#{key}/")
+        next
+      end
+      url_node = REXML::Element.new 'url'
+      loc_node = REXML::Element.new 'loc'
+      loc_node.text = "#{base_url}#{key == 'index' ? '' : key}"
+      url_node.add_element loc_node
+      lastmod_node = REXML::Element.new 'lastmod'
+      lastmod_node.text = Time.now.strftime '%Y-%m-%dT%H:%M:%SZ'
+      url_node.add_element lastmod_node
+      changefreq_node = REXML::Element.new 'changefreq'
+      changefreq_node.text = 'daily'
+      url_node.add_element changefreq_node
+      nodes << url_node
+    end
+    nodes
+  end
+end
 
 desc 'Build SCSS files.'
 task :scss, &ContribScss.new(src: 'assets/stylesheets', all: %w{layout})
 
-desc 'Generate site navigation.'
+desc 'Generate site navigation JSON.'
 task :gen_nav do
-  nav = gather_navs File.absolute_path('templates')
-  File.new('templates/nav.json', 'w:utf-8').write nav.to_json
+  g = NavGenerator.new
+  nav = g.gather_navs File.absolute_path('templates')
+  nav = JSON.pretty_generate nav
+  open('templates/nav.json', 'w:utf-8'){|f| f.write nav }
   puts 'Generate navigation at templates/nav.json'
+end
+
+desc 'Generate sitemap.xml'
+task :gen_sitemap => :gen_nav do
+  nav = JSON.parse open('templates/nav.json', 'r:utf-8'){|f| f.read }
+  g = NavGenerator.new
+  sitemap = g.gen_sitemap nav
+  open('sitemap.xml', 'w:utf-8'){|f| f.write sitemap }
+  puts 'Generate sitemap at sitemap.xml'
 end
 
 desc 'Pull master repository.'
@@ -51,44 +156,10 @@ task :deploy do
 end
 
 desc 'Build files.'
-task :build => [:scss, :gen_nav]
+task :build => [:scss, :gen_nav, :gen_sitemap]
 
-desc ''
+desc 'Run tests (need Grunt).'
 task :test do
   sh 'grunt test'
-end
-
-def gather_navs dir
-  def get_title content
-    return '' unless content =~ /^---/
-    (content.lines.find{|line| line =~ /^title\s*:/ } || 'title:').
-      match(/^title\s*:\s*(.*)$/)[1].chomp
-  end
-
-  def basename filename
-    File.basename filename, File.extname(filename)
-  end
-
-  cwd = File.absolute_path '.'
-  nav = {}
-  Dir.chdir dir
-  Dir.foreach '.' do |f|
-    next if f == '.' || f == '..'
-    if File.directory? f
-      sub_nav = gather_navs File.absolute_path(f)
-      sub_nav.each do |lang, n|
-        nav[lang] ||= {}
-        nav[lang][f] = n
-      end
-    elsif File.file?(f) && File.extname(f) == '.markdown'
-      title = get_title File.open(f, 'r:utf-8').read
-      f = basename f
-      lang = (f.match(/\.([^.]+)$/) || [])[1] || 'default'
-      nav[lang] ||= {}
-      nav[lang][basename f] = title
-    end
-  end
-  Dir.chdir cwd
-  nav
 end
 # vim:set fdm=marker:
