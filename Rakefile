@@ -49,6 +49,7 @@ class NavGenerator
       elsif File.file?(f) && File.extname(f) == '.markdown'
         meta = get_meta f
         f = basename f
+        next if f =~ /^error/
         lang = (f.match(/\.([^.]+)$/) || [])[1] || 'default'
         nav[lang] ||= {}
         nav[lang][basename f] = meta[:title]
@@ -105,6 +106,7 @@ XML
         nodes += gen_sitemap_part(child_nav, "#{base_url}#{key}/")
         next
       end
+      next if key =~ /^error/
       url_node = REXML::Element.new 'url'
       loc_node = REXML::Element.new 'loc'
       loc_node.text = "#{base_url}#{key == 'index' ? '' : key}"

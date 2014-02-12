@@ -103,6 +103,7 @@ class Navigation
     {
         $dir = dirname("{$this->config['templates.path']}/$template_name");
         $alt_lang = [];
+        if (! is_dir($dir)) { $dir = "{$this->config['templates.path']}/"; }
         if ($handle = opendir($dir)) {
             $regex = '/^(?:' . basename($template_name) . ')\.(\w+)\.\w+$/';
             while (false !== ($file = readdir($handle))) {

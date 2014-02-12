@@ -59,9 +59,14 @@ class App
             $lang = $this->config['lang'][$lang];
         }
         $this->mergeParams($lang, $template_name, $params);
-        echo $renderer
+        $str = $renderer
             ->setLayout($this->config['layout'])
             ->render("$template_name.$lang", $params);
+        if ($str === false) {
+            $this->app->notFound();
+        } else {
+            echo $str;
+        }
 
         return $this;
     }
@@ -128,6 +133,9 @@ class App
             }
             $path = implode('/', $path);
             $controller('default', $path);
+        });
+        $app->notFound(function () use ($controller) {
+            $controller('default', '/error404');
         });
     }
 

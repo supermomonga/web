@@ -39,8 +39,9 @@ class Renderer
     public function render($template_name, $params = [])
     {
         $template_type = $this->detectTemplateType($template_name);
-        $template = file_get_contents(
-            "{$this->config['templates.path']}/$template_name.$template_type");
+        $filepath = "{$this->config['templates.path']}/$template_name.$template_type";
+        if (! is_file($filepath)) { return false; }
+        $template = file_get_contents($filepath);
         switch ($template_type) {
             case 'php':
                 return $this->renderPhpTemplateWithLayout($template, $params);
@@ -85,6 +86,7 @@ class Renderer
     {
         $template_type = 'php';
         $dir = dirname("{$this->config['templates.path']}/$template_name");
+        if (! is_dir($dir)) { return 'php'; }
         if ($handle = opendir($dir)) {
             $regex = '/^(?:' . basename($template_name) . ')\.(php|markdown)$/';
             while (false !== ($file = readdir($handle))) {
