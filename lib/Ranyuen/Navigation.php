@@ -94,6 +94,41 @@ class Navigation
         return $breadcrumb;
     }
 
+    /**
+     * @param  string $lang
+     * @param  string $template_name
+     * @return array
+     */
+    public function getAlterNav($lang, $template_name)
+    {
+        $dir = dirname("{$this->config['templates.path']}/$template_name");
+        $alt_lang = [];
+        if ($handle = opendir($dir)) {
+            $regex = '/^(?:' . basename($template_name) . ')\.(\w+)\.\w+$/';
+            while (false !== ($file = readdir($handle))) {
+                $matches = [];
+                if (is_file("$dir/$file") && preg_match($regex, $file, $matches)) {
+                    $alt_lang[] = $matches[1];
+                }
+            }
+        }
+        $alter = [];
+        $link_data = [
+            'ja' => '/',
+            'en' => '/en/',
+        ];
+        $alter['base'] = $link_data[$lang];
+        foreach ($link_data as $k => $v) {
+            $alter[$k] = $v;
+            if (false !== array_search($k, $alt_lang)) {
+                $t = preg_replace('/index$/', '', $template_name);
+                $alter[$k] = preg_replace('/\/\//', '/', $v . $t);
+            }
+        }
+
+        return $alter;
+    }
+
     private function gather($nav)
     {
         $index = [];

@@ -152,40 +152,9 @@ class App
         $params['local_nav'] = $nav->getLocalNav($lang, $template_name);
         $params['news_nav'] = $nav->getNews($lang);
         $params['breadcrumb'] = $nav->getBreadcrumb($lang, $template_name);
+        $params['link'] = $nav->getAlterNav($lang, $template_name);
 
         $params['bgimage'] = (new BgImage)->getRandom();
-
-        $this->mergeLinkParams($lang, $template_name, $params);
-
-        return $params;
-    }
-
-    private function mergeLinkParams($lang, $template_name, &$params)
-    {
-        $dir = dirname("{$this->config['templates.path']}/$template_name");
-        $alt_lang = [];
-        if ($handle = opendir($dir)) {
-            $regex = '/^(?:' . basename($template_name) . ')\.(\w+)\.\w+$/';
-            while (false !== ($file = readdir($handle))) {
-                $matches = [];
-                if (is_file("$dir/$file") && preg_match($regex, $file, $matches)) {
-                    $alt_lang[] = $matches[1];
-                }
-            }
-        }
-        $params['link'] = [];
-        $link_data = [
-            'ja' => '/',
-            'en' => '/en/',
-        ];
-        $params['link']['base'] = $link_data[$lang];
-        foreach ($link_data as $k => $v) {
-            $params['link'][$k] = $v;
-            if (false !== array_search($k, $alt_lang)) {
-                $t = preg_replace('/index$/', '', $template_name);
-                $params['link'][$k] = preg_replace('/\/\//', '/', $v . $t);
-            }
-        }
 
         return $params;
     }
