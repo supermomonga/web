@@ -148,6 +148,7 @@ task :update_local do
   sh 'sudo apt-get update' rescue nil
   sh 'sudo apt-get upgrade' rescue nil
   sh 'sudo gem update' rescue (sh 'gem update')
+  sh 'sudo npm update -g' rescue (sh 'npm update -g')
   sh 'npm-check-updates -u' rescue nil
 
   # Production updates.
