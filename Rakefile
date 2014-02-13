@@ -153,12 +153,10 @@ task :update_local do
   sh 'sudo npm update -g' rescue (sh 'npm update -g')
   sh 'npm-check-updates -u' rescue nil
 
-  # Production updates.
+  # Safe updates.
   sh 'php composer.phar self-update'
-  sh 'php composer.phar update'
-
-  # Development updates.
   sh 'php php-cs-fixer.phar self-update'
+  sh 'php composer.phar update'
   sh 'npm update'
   sh 'bundle update'
   sh 'cd assets && bower update'
@@ -177,7 +175,6 @@ task :deploy do
     puts ssh.exec! <<SHELL
 cd $HOME/www
 git pull origin master > #{log}
-./composer.phar self-update >> #{log}
 ./composer.phar update --no-dev >> #{log}
 cat #{log}
 SHELL
