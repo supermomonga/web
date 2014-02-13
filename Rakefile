@@ -190,5 +190,11 @@ task :build => [:scss, :gen_nav, :gen_sitemap]
 desc 'Run tests (need Grunt).'
 task :test do
   sh 'grunt test'
+  Dir['lib/**/*.php'].concat(%w{index.php}).each do |file|
+    sh "php -l #{file}"
+  end
+  %w{index.php lib/}.each do |path|
+    sh "php php-cs-fixer.phar fix #{path} --level=all"
+  end
 end
 # vim:set fdm=marker:
