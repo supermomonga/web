@@ -5,7 +5,13 @@ html, body { margin: 0; padding: 0; }
 
 body {
   background-attachment: fixed;
-  font-family: "Alef", sans-serif;
+  &.ja{
+    // Replace it to what you want.
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  &.en{
+    font-family: "Alef", sans-serif;
+  }
 }
 
 h2 { box-shadow: 0 -1px 1px #ddd; }
