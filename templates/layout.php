@@ -32,7 +32,7 @@ $switch_lang = implode(' / ', $switch_lang);
     }
     </style>
 </head>
-<body>
+<body class="<?php echo $lang ?>">
     <div class="lang"><?php echo $switch_lang; ?></div>
     <div class="container">
         <div class="global_nav">
