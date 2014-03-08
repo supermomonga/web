@@ -99,6 +99,11 @@ $switch_lang = implode(' / ', $switch_lang);
             Spring Calanthe (EBINE) and Ponerorchis (AWACHIDORI &amp; YUMECHIDORI) you see on our website are all bred, researched and developed in our <a rel="home" href="<?php $h->h($home); ?>">Ranyuen</a>&#39;s farm.</p>
         </footer>
     </div>
+    <script>
+    window.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.container').style.top = window.getComputedStyle(document.querySelector('body > header')).height;
+    });
+    </script>
     <script src="/assets/javascripts/messageForDeveloperFromRanyuen.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
