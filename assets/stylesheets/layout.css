@@ -1,122 +1,104 @@
-html, body {
+@charset "UTF-8";
+/*
+  Frameless      <http://framelessgrid.com/>
+  by Joni Korpi     <http://jonikorpi.com/>
+  licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/*
+  Margin, padding, and border resets
+  except for form elements
+*/
+body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  border: 0; }
+
+/*
+  Consistency fixes
+  adopted from http://necolas.github.com/normalize.css/
+*/
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, audio, canvas, video {
+  display: block; }
+
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
 
 body {
-  background-attachment: fixed; }
-  body.ja {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
-  body.en {
-    font-family: "Alef", sans-serif; }
+  min-height: 100%;
+  font-size: 100%; }
 
-h2 {
-  box-shadow: 0 -1px 1px #ddd; }
-
-figure {
-  display: inline-block;
-  position: relative; }
-  figure figurecaption {
-    display: block;
-    font-size: smaller;
-    opacity: 0.8; }
-
-img {
-  max-width: 100%; }
-
-a:not(.inactive) {
-  border-radius: 4px;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out; }
-  a:not(.inactive):hover, a:not(.inactive):focus {
-    background: rgba(0, 0, 0, 0.6);
-    color: #f064b4; }
-
-table th, table td {
-  border: 1px solid gray; }
-
-.container {
-  background: rgba(255, 255, 255, 0.4);
-  font-size: 14px;
-  margin: 0 auto;
-  padding: 0;
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
   position: relative;
-  width: 100%; }
-  .container .global_nav ul {
-    background: rgba(255, 180, 100, 0.8);
-    border-radius: 4px;
-    display: block;
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-    padding: 0; }
-    .container .global_nav ul:hover, .container .global_nav ul:focus {
-      background: #ff78e6; }
-    .container .global_nav ul li {
-      padding: 2px 0.5em;
-      display: inline-block;
-      margin: 0.6em 0.1em; }
-      .container .global_nav ul li a {
-        border-radius: 4px;
-        color: blue;
-        line-height: 1.1em;
-        padding: 2px;
-        -webkit-transition: 0.3s ease-in-out;
-        transition: 0.3s ease-in-out; }
-        .container .global_nav ul li a:hover, .container .global_nav ul li a:focus {
-          background: rgba(0, 0, 0, 0.6);
-          color: #f064b4; }
-  .container .local_nav ul {
-    background: rgba(0, 255, 200, 0.4);
-    border-radius: 4px;
-    display: block;
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-    padding: 0; }
-    .container .local_nav ul:hover, .container .local_nav ul:focus {
-      background: rgba(0, 255, 120, 0.8); }
-    .container .local_nav ul li {
-      padding: 2px 0.5em;
-      display: inline-block;
-      margin: 0.6em 0.1em; }
-      .container .local_nav ul li a {
-        border-radius: 4px;
-        color: blue;
-        line-height: 1.1em;
-        padding: 2px;
-        -webkit-transition: 0.3s ease-in-out;
-        transition: 0.3s ease-in-out; }
-        .container .local_nav ul li a:hover, .container .local_nav ul li a:focus {
-          background: rgba(0, 0, 0, 0.6);
-          color: #f064b4; }
+  vertical-align: baseline; }
 
-.lang {
-  font-size: smaller;
-  margin-bottom: 2px;
-  position: relative;
-  text-align: right; }
+sup {
+  top: -0.5em; }
 
-.breadcrumb {
-  padding: 2px 0.5em;
-  color: gray;
-  font-size: smaller; }
-  .breadcrumb a {
-    border-radius: 4px;
-    color: blue;
-    line-height: 1.1em;
-    padding: 2px;
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out; }
-    .breadcrumb a:hover, .breadcrumb a:focus {
-      background: rgba(0, 0, 0, 0.6);
-      color: #f064b4; }
-  .breadcrumb ul {
-    margin: 0;
-    padding: 0; }
-  .breadcrumb li {
-    display: inline; }
-    .breadcrumb li + li:before {
-      content: '>'; }
-  .breadcrumb a {
-    color: gray; }
+sub {
+  bottom: -0.25em; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+b, strong {
+  font-weight: bold; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a img, img {
+  -ms-interpolation-mode: bicubic;
+  border: 0; }
+
+input, textarea, button, select {
+  margin: 0;
+  font-size: 100%;
+  line-height: normal;
+  vertical-align: baseline; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button; }
+
+input[type="checkbox"], input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+textarea {
+  overflow: auto; }
+
+/*
+  These are easy to forget
+*/
+::selection {
+  background: red;
+  color: white; }
+
+::-moz-selection {
+  background: red;
+  color: white; }
+
+img::selection {
+  background: transparent; }
+
+img::-moz-selection {
+  background: transparent; }
+
+body {
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62); }
 
 @-webkit-keyframes animateLogo {
   0% {
@@ -136,124 +118,158 @@ table th, table td {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); } }
 
-.header {
-  background: rgba(255, 153, 153, 0.4);
-  border-radius: 8px;
-  height: 136px;
+figure {
+  display: inline-block;
   position: relative; }
-  .header h1 {
-    font-size: xx-large;
-    line-height: 112px;
-    margin: 0;
-    position: relative;
-    text-align: center; }
-    .header h1 small {
-      display: block;
-      font-size: small;
-      line-height: 1em;
-      margin: 0;
-      position: relative;
-      top: -1em; }
-  .header .logo {
-    -webkit-animation: animateLogo 0.5s ease-in-out 0s 1 normal;
-    animation: animateLogo 0.5s ease-in-out 0s 1 normal;
-    display: block;
-    height: 112px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-    width: 112px;
-    z-index: 1000; }
-    .header .logo:hover, .header .logo:focus {
-      -webkit-transform: rotate(5deg);
-      transform: rotate(5deg); }
-    .header .logo img {
-      height: 100%;
-      width: 100%; }
-  .header .tagline {
-    left: 0;
-    position: absolute;
-    top: 112px; }
-
-.main {
-  overflow: hidden; }
-
-.aside {
-  float: left;
-  position: relative;
-  width: 25%; }
-  .aside .news {
-    padding: 0; }
-    .aside .news li {
-      padding: 2px 0.5em;
-      display: block; }
-      .aside .news li a {
-        border-radius: 4px;
-        color: blue;
-        line-height: 1.1em;
-        padding: 2px;
-        -webkit-transition: 0.3s ease-in-out;
-        transition: 0.3s ease-in-out; }
-        .aside .news li a:hover, .aside .news li a:focus {
-          background: rgba(0, 0, 0, 0.6);
-          color: #f064b4; }
-  .aside .facebook {
-    color: blue;
-    overflow: hidden; }
-    .aside .facebook img {
-      display: block;
-      float: left;
-      height: 32px;
-      width: 32px; }
-    .aside .facebook div {
-      border-radius: 0 2px 2px 0;
-      float: left;
-      height: 32px;
-      padding: 0 2px 0 0.5em;
-      -webkit-transition: 0.3s ease-in-out;
-      transition: 0.3s ease-in-out; }
-      .aside .facebook div:hover, .aside .facebook div:focus {
-        background: #3b5b99;
-        color: white; }
-
-.content {
-  background: rgba(255, 255, 255, 0.6);
-  float: right;
-  position: relative;
-  width: 75%; }
-  .content .article {
-    margin: 0 32px; }
-
-.footer {
-  padding: 2px 0.5em;
-  border-top: 1px solid gray;
-  clear: both;
-  color: gray;
+figure figurecaption {
+  display: block;
   font-size: smaller;
-  margin-top: 32px;
-  position: relative; }
-  .footer a {
-    border-radius: 4px;
-    color: blue;
-    line-height: 1.1em;
-    padding: 2px;
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out; }
-    .footer a:hover, .footer a:focus {
-      background: rgba(0, 0, 0, 0.6);
-      color: #f064b4; }
-  .footer .menu {
-    overflow: hidden; }
-    .footer .menu ul {
-      float: left;
-      margin: 0;
-      padding: 0;
-      width: 25%; }
-      .footer .menu ul li {
-        display: block; }
-  .footer .copyright {
-    clear: both;
-    text-align: center;
-    color: black; }
+  opacity: 0.8; }
+
+table thead {
+  background: #f0f5f0; }
+table th, table td {
+  border: 1px solid #666; }
+
+img {
+  max-width: 100%; }
+
+a {
+  color: #3b8bba; }
+a:visited {
+  color: #265778; }
+
+body {
+  background-attachment: fixed; }
+body.ja {
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; }
+body.en {
+  font-family: "Alef", sans-serif; }
+body > header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000; }
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  top: 24mm;
+  width: 70.5em; }
+.container > article {
+  background: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  padding: 0 5mm 12mm 5mm; }
+.container > footer {
+  background: rgba(255, 255, 255, 0.6);
+  color: #666;
+  font-size: small;
+  padding: 0 5mm; }
+
+.global-nav {
+  background: #ffdbee;
+  height: 12mm;
+  border-bottom: solid 1px transparent; }
+.global-nav .nav-left, .global-nav .nav-right, .global-nav .nav-item {
+  display: inline-block;
+  height: 12mm;
+  line-height: 12mm;
+  margin: 0;
+  vertical-align: middle; }
+.global-nav .nav-right {
+  position: absolute;
+  right: 0; }
+.global-nav .nav-item {
+  padding: 0 2mm; }
+.global-nav .nav-item a {
+  color: #000;
+  text-decoration: none; }
+.global-nav .nav-item:not(.nav-item-home) a:hover, .global-nav .nav-item:not(.nav-item-home) a:focus {
+  color: #666; }
+.global-nav .nav-item-home {
+  font-size: larger; }
+.global-nav .logo-span {
+  padding: 0;
+  width: 12mm; }
+.global-nav .logo {
+  -webkit-animation: animateLogo 0.5s ease-in-out 0s 1 normal;
+  animation: animateLogo 0.5s ease-in-out 0s 1 normal;
+  display: inline;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  position: absolute; }
+.global-nav .logo:hover, .global-nav .logo:focus {
+  -webkit-transform: rotate(5deg);
+  transform: rotate(5deg); }
+.global-nav .logo img {
+  height: 12mm;
+  min-width: 12mm; }
+
+.local-nav {
+  background: #f0f5f0; }
+.local-nav .nav-left, .local-nav .nav-right, .local-nav .nav-item {
+  display: inline-block;
+  height: 12mm;
+  line-height: 12mm;
+  margin: 0;
+  vertical-align: middle; }
+.local-nav .nav-right {
+  position: absolute;
+  right: 0; }
+.local-nav .nav-item {
+  padding: 0 2mm; }
+.local-nav .nav-item a {
+  color: #000;
+  text-decoration: none; }
+.local-nav .nav-item:not(.nav-item-home) a:hover, .local-nav .nav-item:not(.nav-item-home) a:focus {
+  color: #666; }
+.local-nav .nav-item-home {
+  font-size: larger; }
+
+.breadcrumb {
+  font-size: small; }
+.breadcrumb .nav-left, .breadcrumb .nav-right, .breadcrumb .nav-item {
+  display: inline-block;
+  height: 12mm;
+  line-height: 12mm;
+  margin: 0;
+  vertical-align: middle; }
+.breadcrumb .nav-right {
+  position: absolute;
+  right: 0; }
+.breadcrumb .nav-item {
+  padding: 0 2mm; }
+.breadcrumb .nav-item a {
+  color: #000;
+  text-decoration: none; }
+.breadcrumb .nav-item:not(.nav-item-home) a:hover, .breadcrumb .nav-item:not(.nav-item-home) a:focus {
+  color: #666; }
+.breadcrumb .nav-item-home {
+  font-size: larger; }
+.breadcrumb a {
+  color: #000; }
+.breadcrumb a:hover, .breadcrumb a:focus {
+  color: #666; }
+.breadcrumb a:after {
+  content: ' >'; }
+
+/*
+  Style overrides for IE6-8
+  http://jonikorpi.com/leaving-old-IE-behind/
+*/
+/*
+  An easy way to zoom your entire layout in or out (as long as it's set in ems).
+  Just change the media queries to activate them.
+  Assuming your base font-size is 16:
+  - the first one zooms out by a factor of (16-2)/16 = 0.875
+  - the second one zooms in by a factor of (16+2)/16 = 1.125
+*/
+@media screen and (max-width: 72.5em) {
+  .container {
+    width: 52.5em; } }
+@media screen and (max-width: 54.5em) {
+  .container {
+    width: 34.5em; } }
+@media screen and (max-width: 36.5em) {
+  .container {
+    width: 25.5em; } }

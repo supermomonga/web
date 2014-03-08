@@ -30,28 +30,28 @@ class Helper
      */
     public function echoNav($nav, $base = '/')
     {
-        echo '<ul>';
+        $is_first = true;
         foreach ($nav as $href => $title) {
-            echo '<li><a href="';
+            echo '<div class="nav-item ' . ($is_first ? 'nav-item-home' : '') . '"><a href="';
             $this->h(preg_replace('/\/\//', '/', $base . $href));
             echo '">';
             $this->h($title);
-            echo '</a></li>';
+            echo '</a></div>';
+            $is_first = false;
         }
-        echo '</ul>';
     }
 
     public function echoBreadcrumb($nav, $base = '/')
     {
-        echo '<ul itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';
+        echo '<div class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';
         foreach ($nav as $href => $title) {
-            echo '<li><a href="';
+            echo '<div class="nav-item"><a href="';
             $this->h(preg_replace('/\/\//', '/', $base . $href));
             echo '" itemprop="url"><span itemprop="title">';
             $this->h($title);
-            echo '</span></a></li>';
+            echo '</span></a></div>';
         }
-        echo '</ul>';
+        echo '</div>';
     }
 
     /**

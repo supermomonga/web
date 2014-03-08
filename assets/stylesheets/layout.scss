@@ -1,20 +1,26 @@
 @charset "utf-8";
 @import "helpers";
 
-html, body { margin: 0; padding: 0; }
-
-body {
-  background-attachment: fixed;
-  &.ja{
-    // Replace it to what you want.
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+@-webkit-keyframes animateLogo {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
-  &.en{
-    font-family: "Alef", sans-serif;
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
-
-h2 { box-shadow: 0 -1px 1px #ddd; }
+@keyframes animateLogo {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
 
 figure {
   display: inline-block;
@@ -27,214 +33,141 @@ figure {
   }
 }
 
-img { max-width: 100%; }
+table {
+  thead { background: $nav_bg_color; }
 
-a:not(.inactive) {
-  border-radius: 4px;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-
-  &:hover, &:focus {
-    background: $hoverBgColor;
-    color: $hoverColor;
-  }
+  th, td { border: 1px solid #666; }
 }
 
-table {
-  th, td {
-    border: 1px solid gray;
+img { max-width: 100%; }
+
+a {
+  color: #3b8bba;
+
+  &:visited { color: #265778; }
+}
+
+body {
+  background-attachment: fixed;
+
+  &.ja { font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; }
+
+  &.en { font-family: "Alef", sans-serif; }
+
+  & > header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
   }
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.4);
-  font-size: 14px;
   margin: 0 auto;
-  padding: 0;
   position: relative;
-  width: 100%;
+  top: $menu_height * 2;
+  width: $cols16;
 
-  .global_nav {
-    @include navigation(rgba(255, 180, 100, 0.8), rgba(255, 120, 230, 1.0));
+  & > article {
+    background: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    padding: 0 5mm $menu_height 5mm;
   }
 
-  .local_nav {
-    @include navigation(rgba(0, 255, 200, 0.4), rgba(0, 255, 120, 0.8));
+  & > footer {
+    background: rgba(255, 255, 255, 0.6);
+    color: #666;
+    font-size: small;
+    padding: 0 5mm;
   }
 }
 
-.lang {
-  font-size: smaller;
-  margin-bottom: 2px;
-  position: relative;
-  text-align: right;
-}
+.global-nav {
+  background: rgb(255, 219, 238);
+  height: $menu_height;
+  border-bottom: solid 1px transparent;
+  @include navigation;
 
-.breadcrumb {
-  @include menulink;
-  color: gray;
-  font-size: smaller;
-
-  ul {
-    margin: 0;
+  .logo-span {
     padding: 0;
-  }
-
-  li {
-    display: inline;
-
-    & + li:before { content: '>'; }
-  }
-
-  a { color: gray; }
-}
-
-@-webkit-keyframes animateLogo {
-    0% { -webkit-transform: rotate(45deg); transform: rotate(45deg); }
-  100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-}
-@keyframes animateLogo {
-    0% { -webkit-transform: rotate(45deg); transform: rotate(45deg); }
-  100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-}
-
-.header {
-  $logosize: 112px;
-  background: rgba(255, 153, 153, 0.4);
-  border-radius: 8px;
-  height: $logosize + 24;
-  position: relative;
-
-  h1 {
-    font-size: xx-large;
-    line-height: $logosize;
-    margin: 0;
-    position: relative;
-    text-align: center;
-
-    small {
-      display: block;
-      font-size: small;
-      line-height: 1em;
-      margin: 0;
-      position: relative;
-      top: -1em;
-    }
+    width: $menu_height;
   }
 
   .logo {
     -webkit-animation: animateLogo 0.5s ease-in-out 0s 1 normal;
-    animation: animateLogo 0.5s ease-in-out 0s 1 normal;
-    display: block;
-    height: $logosize;
-    left: 0;
-    position: absolute;
-    top: 0;
+            animation: animateLogo 0.5s ease-in-out 0s 1 normal;
+    display: inline;
     -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-    width: $logosize;
-    z-index: 1000;
+            transition: 0.3s ease-in-out;
+    overflow: hidden;
+    position: absolute;
 
     &:hover, &:focus {
       -webkit-transform: rotate(5deg);
-      transform: rotate(5deg);
+              transform: rotate(5deg);
     }
 
     img {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  .tagline {
-    left: 0;
-    position: absolute;
-    top: $logosize;
-  }
-}
-
-.main {
-  overflow: hidden;
-}
-
-.aside {
-  float: left;
-  position: relative;
-  width: 100% * 8 / 32;
-
-  .news {
-    padding: 0;
-
-    li {
-      @include menulink;
-      display: block;
-    }
-  }
-
-  .facebook {
-    color: blue;
-    overflow: hidden;
-
-    img {
-      display: block;
-      float: left;
-      height: 32px;
-      width: 32px;
-    }
-
-    div {
-      border-radius: 0 2px 2px 0;
-      float: left;
-      height: 32px;
-      padding: 0 2px 0 0.5em;
-      -webkit-transition: 0.3s ease-in-out;
-      transition: 0.3s ease-in-out;
-
-      &:hover, &:focus {
-        background: rgb(59, 91, 153);
-        color: white;
-      }
+      height: $menu_height;
+      min-width: $menu_height;
     }
   }
 }
 
+.local-nav {
+  background: $nav_bg_color;
+  @include navigation;
+}
 
-.content {
-  background: rgba(255, 255, 255, 0.6);
-  float: right;
-  position: relative;
-  width: 100% * 24 / 32;
+.breadcrumb {
+  font-size: small;
+  @include navigation;
 
-  .article {
-    margin: 0 $grid;
+  a {
+    color: #000;
+
+    &:hover, &:focus { color: #666; }
+
+    &:after { content: ' >'; }
   }
 }
 
-.footer {
-  @include menulink;
-  border-top: 1px solid gray;
-  clear: both;
-  color: gray;
-  font-size: smaller;
-  margin-top: $grid;
-  position: relative;
+/*
+  Style overrides for IE6-8
+  http://jonikorpi.com/leaving-old-IE-behind/
+*/
 
-  .menu {
-    overflow: hidden;
+.ie {
+}
 
-    ul {
-      float: left;
-      margin: 0;
-      padding: 0;
-      width: 25%;
 
-      li { display: block; }
-    }
-  }
+/*
+  An easy way to zoom your entire layout in or out (as long as it's set in ems).
+  Just change the media queries to activate them.
+  Assuming your base font-size is 16:
+  - the first one zooms out by a factor of (16-2)/16 = 0.875
+  - the second one zooms in by a factor of (16+2)/16 = 1.125
+*/
 
-  .copyright {
-    clear: both;
-    text-align: center;
-    color: black;
-  }
+// @media screen and (max-width: 1px) {
+//   body {
+//     font-size: ($font-size - 2) / $em;
+//   }
+// }
+//
+// @media screen and (max-width: 1px) {
+//   body {
+//     font-size: ($font-size + 2) / $em;
+//   }
+// }
+
+@media screen and (max-width: $cols16 + 2em) {
+  .container { width: $cols12; }
+}
+
+@media screen and (max-width: $cols12 + 2em) {
+  .container { width: $cols8; }
+}
+
+@media screen and (max-width: $cols8 + 2em) {
+  .container { width: $cols6; }
 }
